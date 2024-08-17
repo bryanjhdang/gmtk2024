@@ -2,32 +2,57 @@ extends CharacterBody2D
 
 @onready var game_manager = %GameManager
 
-const SPEED = 600.0
+# Player stats
+const SPEED: float = 600.0
+var health: int = 3
+
 var mouse_position = null
+var BOUND = 2
 
 # Character movement - the player follows the mouse when left click is held
 func _physics_process(delta: float) -> void:
-	# TODO: Comment this out if you want to maintain velocity after stop clicking
-	velocity = Vector2(0,0)
 	mouse_position = get_global_mouse_position()
 	
-	if Input.is_action_pressed("move"):
-		var direction = (mouse_position - position).normalized()
-		velocity = (direction * SPEED)
+	var direction = (mouse_position - position).normalized()
+	velocity = (direction * SPEED)
 	
-	move_and_slide()
+	if abs(mouse_position.x - position.x) >= BOUND and abs(mouse_position.y - position.y) >= BOUND:
+		move_and_slide()
+
+
+
+func _process(delta: float) -> void:
+	pass
 
 
 # Moves the player forward a certain amount
-func dash() -> void:
+func _dash() -> void:
 	print("dash")
 
 
 # The player bites on an enemy giving bonus combos
-func chomp() -> void:
+func _chomp() -> void:
 	pass
 
 
 # If combo meter is full, it activates a temporary speed boost and invincibility 
-func frenzy() -> void:
+func _frenzy() -> void:
 	pass
+
+# An enemy should call this function if the player gets hit
+func get_hurt(damage: int) -> void:
+	health -= damage
+	if (health > 0):
+		_damaged()
+	else:
+		_die()
+
+
+func _damaged() -> void:
+	# knockback, temp invincibility
+	print("got hit")
+
+
+func _die() -> void:
+	# play death animation, call end game
+	print("died")

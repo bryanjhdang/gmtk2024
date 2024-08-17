@@ -3,3 +3,4 @@ res://scenes/main_level.tscn
 res://characters/player/player.tscn
 res://characters/fish/baby_fish.tscn
 res://characters/fish/small_fish.tscn
+res://characters/player/player.gd
