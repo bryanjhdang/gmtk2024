@@ -2,7 +2,7 @@ extends Node
 
 var score: float = 100
 
-@onready var score_label = %scoreLabel  # Adjust path as needed
+@onready var score_label = %scoreLabel
 
 
 func add_point(amount: float):
