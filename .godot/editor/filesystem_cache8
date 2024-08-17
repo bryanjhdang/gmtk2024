@@ -1,3 +1,12 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1723882296
-icon.svg::CompressedTexture2D::753008145784887022::1723882291::1723882297::1::::<><>::
+::res://::1723885029
+README.md::TextFile::-1::1723884136::0::1::::<><>::
+::res://assets/::1723885029
+icon.svg::CompressedTexture2D::753008145784887022::1723882291::1723885029::1::::<><>::
+::res://characters/::1723884656
+::res://characters/enemies/::1723884656
+::res://characters/player/::1723884945
+player.tscn::PackedScene::8144316423048063335::1723884945::0::1::::<><>::
+::res://scenes/::1723884787
+main_level.tscn::PackedScene::5074946184667024887::1723884787::0::1::::<><>::
+testing_playground.tscn::PackedScene::2652165318949170946::1723884781::0::1::::<><>::
