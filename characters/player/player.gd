@@ -10,19 +10,23 @@ var mouse_position = null
 var BOUND = 2
 
 # Character movement - the player follows the mouse when left click is held
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
 	mouse_position = get_global_mouse_position()
+
+	# change the player size based on score
+	scale = Vector2((game_manager.score + 900) / 1000, (game_manager.score + 900) / 1000)
 	
-	var direction = (mouse_position - position).normalized()
+	var direction: Vector2 = (mouse_position - position).normalized()
 	velocity = (direction * SPEED)
 	
-	if abs(mouse_position.x - position.x) >= BOUND and abs(mouse_position.y - position.y) >= BOUND:
+	if _player_is_not_stationary():
 		move_and_slide()
 
 
-
-func _process(delta: float) -> void:
-	pass
+func _player_is_not_stationary() -> bool:
+	if abs(mouse_position.x - position.x) < BOUND and abs(mouse_position.y - position.y) < BOUND:
+		return false
+	return true
 
 
 # Moves the player forward a certain amount

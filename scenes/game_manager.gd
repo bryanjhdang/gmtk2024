@@ -1,7 +1,7 @@
 extends Node
 
-var score = 5
+var score: float = 100
 
-func add_point(amount):
+func add_point(amount: float):
 	score += amount
 	print(score)
