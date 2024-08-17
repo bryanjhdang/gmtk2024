@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var game_manager = %GameManager
 
 const SPEED = 600.0
 var mouse_position = null
@@ -15,7 +16,6 @@ func _physics_process(delta: float) -> void:
 		velocity = (direction * SPEED)
 	
 	move_and_slide()
-
 
 
 # Moves the player forward a certain amount

@@ -1,6 +1,7 @@
-res://characters/player/player.tscn
-res://scenes/testing_playground.tscn
-res://scenes/main_level.tscn
-res://characters/player/player.gd
+res://characters/fish/baby_fish.tscn
+res://characters/fish/fish.gd
 res://scenes/sandbox.tscn
-res://scenes/menu.tscn
+res://scenes/main_level.tscn
+res://characters/player/player.tscn
+res://characters/fish/small_fish.tscn
+res://scenes/game_manager.gd
