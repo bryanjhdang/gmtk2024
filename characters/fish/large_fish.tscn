@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dl712r8qjcteg"]
+
+[ext_resource type="Script" path="res://characters/fish/fish.gd" id="1_blv8a"]
+[ext_resource type="Texture2D" uid="uid://db0rf25g0ry6n" path="res://assets/fish-cooked-svgrepo-com.svg" id="2_j0sbq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6rmjw"]
+radius = 43.0
+height = 114.0
+
+[node name="LargeFish" type="Area2D"]
+script = ExtResource("1_blv8a")
+value = 50.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_j0sbq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_6rmjw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

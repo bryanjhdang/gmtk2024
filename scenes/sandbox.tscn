@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bd1y1mjb4waxu"]
+[gd_scene load_steps=7 format=3 uid="uid://bd1y1mjb4waxu"]
 
 [ext_resource type="Script" path="res://scenes/game_manager.gd" id="1_kft4r"]
 [ext_resource type="PackedScene" uid="uid://dobfx4bhn6edj" path="res://characters/player/player.tscn" id="1_oa5yd"]
 [ext_resource type="PackedScene" uid="uid://cstbqkds6d5hl" path="res://characters/fish/baby_fish.tscn" id="2_e1r8k"]
 [ext_resource type="PackedScene" uid="uid://cbsal0wiyon0b" path="res://characters/fish/small_fish.tscn" id="4_mw18f"]
+[ext_resource type="PackedScene" uid="uid://csgctauwlmbqg" path="res://characters/fish/medium_fish.tscn" id="5_6w228"]
+[ext_resource type="PackedScene" uid="uid://dl712r8qjcteg" path="res://characters/fish/large_fish.tscn" id="6_7m8r5"]
 
 [node name="TestingPlayground" type="Node2D"]
 
@@ -19,3 +21,9 @@ position = Vector2(604, 211)
 
 [node name="SmallFish" parent="." instance=ExtResource("4_mw18f")]
 position = Vector2(433, 337)
+
+[node name="MediumFish" parent="." instance=ExtResource("5_6w228")]
+position = Vector2(197, 420)
+
+[node name="LargeFish" parent="." instance=ExtResource("6_7m8r5")]
+position = Vector2(825, 415)

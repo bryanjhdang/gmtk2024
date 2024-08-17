@@ -5,3 +5,6 @@ res://scenes/main_level.tscn
 res://characters/player/player.tscn
 res://characters/fish/small_fish.tscn
 res://scenes/game_manager.gd
+res://characters/fish/medium_fish.tscn
+res://characters/fish/large_fish.tscn
+res://characters/player/player.gd
