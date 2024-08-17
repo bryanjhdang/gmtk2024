@@ -1,28 +1,33 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 600.0
+var mouse_position = null
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity: int = ProjectSettings.get_setting("physics/2d/default_gravity")
-
-
+# Character movement - the player follows the mouse when left click is held
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y += gravity * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	# TODO: Comment this out if you want to maintain velocity after stop clicking
+	velocity = Vector2(0,0)
+	mouse_position = get_global_mouse_position()
+	
+	if Input.is_action_pressed("move"):
+		var direction = (mouse_position - position).normalized()
+		velocity = (direction * SPEED)
+	
 	move_and_slide()
+
+
+
+# Moves the player forward a certain amount
+func dash() -> void:
+	print("dash")
+
+
+# The player bites on an enemy giving bonus combos
+func chomp() -> void:
+	pass
+
+
+# If combo meter is full, it activates a temporary speed boost and invincibility 
+func frenzy() -> void:
+	pass

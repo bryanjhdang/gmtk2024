@@ -1,3 +1,6 @@
 res://characters/player/player.tscn
 res://scenes/testing_playground.tscn
 res://scenes/main_level.tscn
+res://characters/player/player.gd
+res://scenes/sandbox.tscn
+res://scenes/menu.tscn
