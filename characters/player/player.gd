@@ -2,35 +2,62 @@ extends CharacterBody2D
 
 @onready var game_manager = %GameManager
 
+# Player stats
 const SPEED: float = 600.0
+var health: int = 3
+
 var mouse_position = null
+var BOUND = 2
 
 # Character movement - the player follows the mouse when left click is held
-func _physics_process(delta: float) -> void:
-	# TODO: Comment this out if you want to maintain velocity after stop clicking
-	velocity = Vector2(0,0)
+func _process(delta: float) -> void:
 	mouse_position = get_global_mouse_position()
-	
+
 	# change the player size based on score
 	scale = Vector2((game_manager.score + 900) / 1000, (game_manager.score + 900) / 1000)
 	
-	if Input.is_action_pressed("move"):
-		var direction: Vector2 = (mouse_position - position).normalized()
-		velocity = (direction * SPEED)
+	#if Input.is_action_pressed("move"):
+	var direction: Vector2 = (mouse_position - position).normalized()
+	velocity = (direction * SPEED)
 	
-	move_and_slide()
+	if _player_is_not_stationary():
+		move_and_slide()
+
+
+func _player_is_not_stationary() -> bool:
+	if abs(mouse_position.x - position.x) < BOUND and abs(mouse_position.y - position.y) < BOUND:
+		return false
+	return true
 
 
 # Moves the player forward a certain amount
-func dash() -> void:
+func _dash() -> void:
 	print("dash")
 
 
 # The player bites on an enemy giving bonus combos
-func chomp() -> void:
+func _chomp() -> void:
 	pass
 
 
 # If combo meter is full, it activates a temporary speed boost and invincibility 
-func frenzy() -> void:
+func _frenzy() -> void:
 	pass
+
+# An enemy should call this function if the player gets hit
+func get_hurt(damage: int) -> void:
+	health -= damage
+	if (health > 0):
+		_damaged()
+	else:
+		_die()
+
+
+func _damaged() -> void:
+	# knockback, temp invincibility
+	print("got hit")
+
+
+func _die() -> void:
+	# play death animation, call end game
+	print("died")
