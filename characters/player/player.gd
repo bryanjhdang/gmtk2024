@@ -16,6 +16,7 @@ func _process(delta: float) -> void:
 	# change the player size based on score
 	scale = Vector2((game_manager.score + 900) / 1000, (game_manager.score + 900) / 1000)
 	
+	#if Input.is_action_pressed("move"):
 	var direction: Vector2 = (mouse_position - position).normalized()
 	velocity = (direction * SPEED)
 	
