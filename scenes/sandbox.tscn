@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://dobfx4bhn6edj" path="res://characters/player/player.tscn" id="1_oa5yd"]
 [ext_resource type="PackedScene" uid="uid://cstbqkds6d5hl" path="res://characters/fish/baby_fish.tscn" id="2_e1r8k"]
 [ext_resource type="PackedScene" uid="uid://cbsal0wiyon0b" path="res://characters/fish/small_fish.tscn" id="4_mw18f"]
-[ext_resource type="PackedScene" path="res://characters/fish/medium_fish.tscn" id="5_6w228"]
-[ext_resource type="PackedScene" path="res://characters/fish/large_fish.tscn" id="6_7m8r5"]
+[ext_resource type="Script" path="res://scripts/timer_label.gd" id="5_fh6ij"]
+[ext_resource type="Script" path="res://scripts/score_label.gd" id="6_upw4n"]
 
 [node name="TestingPlayground" type="Node2D"]
 
@@ -18,12 +18,27 @@ position = Vector2(270, 143)
 
 [node name="BabyFish" parent="." instance=ExtResource("2_e1r8k")]
 position = Vector2(604, 211)
+value = 0.0
 
 [node name="SmallFish" parent="." instance=ExtResource("4_mw18f")]
 position = Vector2(433, 337)
+value = 0.0
 
-[node name="MediumFish" parent="." instance=ExtResource("5_6w228")]
-position = Vector2(197, 420)
+[node name="timerLabel" type="Label" parent="."]
+offset_left = 417.0
+offset_top = 4.0
+offset_right = 623.0
+offset_bottom = 63.0
+theme_override_font_sizes/font_size = 24
+text = "timer"
+script = ExtResource("5_fh6ij")
 
-[node name="LargeFish" parent="." instance=ExtResource("6_7m8r5")]
-position = Vector2(825, 415)
+[node name="scoreLabel" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = 740.0
+offset_top = 26.0
+offset_right = 782.0
+offset_bottom = 49.0
+theme_override_font_sizes/font_size = 24
+text = "score"
+script = ExtResource("6_upw4n")
