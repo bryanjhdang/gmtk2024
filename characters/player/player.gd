@@ -4,10 +4,13 @@ extends CharacterBody2D
 
 # Player stats
 const SPEED: float = 600.0
-var health: int = 3
+const BOOST: float = 600.0
 
+var health: int = 3
 var mouse_position = null
 var BOUND = 2
+var cast_frenzy: bool = true
+var boost_enabled: bool = false
 
 # Character movement - the player follows the mouse when left click is held
 func _process(delta: float) -> void:
@@ -18,7 +21,13 @@ func _process(delta: float) -> void:
 	
 	#if Input.is_action_pressed("move"):
 	var direction: Vector2 = (mouse_position - position).normalized()
-	velocity = (direction * SPEED)
+	if boost_enabled:
+		velocity = (direction * (SPEED + BOOST))
+	else:
+		velocity = (direction * (SPEED))
+	
+	if Input.is_action_pressed("frenzy") and cast_frenzy:
+		_frenzy()
 	
 	if _player_is_not_stationary():
 		move_and_slide()
@@ -42,7 +51,17 @@ func _chomp() -> void:
 
 # If combo meter is full, it activates a temporary speed boost and invincibility 
 func _frenzy() -> void:
-	pass
+	boost_enabled = true
+	$CollisionShape2D.disabled = true
+	await get_tree().create_timer(3.0).timeout
+	boost_enabled = false
+	$CollisionShape2D.disabled = false
+	frenzy_cooldown()
+
+func frenzy_cooldown() -> void:
+	cast_frenzy = false
+	await get_tree().create_timer(10.0).timeout
+	cast_frenzy = true
 
 # An enemy should call this function if the player gets hit
 func get_hurt(damage: int) -> void:
