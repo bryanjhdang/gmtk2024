@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
 @onready var game_manager = %GameManager
+@onready var hud = %Hud
 
 # Player
-var speed: float = 500.0
+const SPEED: float = 500.0
 var acceleration: float = 5000.0
 var deceleration: float = 700.0
 var health: int = 3
@@ -19,19 +20,31 @@ const BOUND: float = 2
 var mouse_position: Vector2
 var prev_direction: Vector2
 
+# Frenzy
+const BOOST: float = 600.0
+var cast_frenzy: bool = true
+var frenzy_enabled: bool = false
+
 
 # Character movement - the player follows the mouse when left click is held
 func _process(delta: float) -> void:
 	# change the player size based on score
 	scale = Vector2((game_manager.score + 900) / 1000, (game_manager.score + 900) / 1000)
 	
-	# Handle movement
 	if not is_dashing:
 		if Input.is_action_pressed("move"):
 			_apply_acceleration(delta)
 		else:
 			_apply_deceleration(delta)
-	
+
+	#if Input.is_action_pressed("move"):
+	var direction: Vector2 = (mouse_position - position).normalized()
+	if frenzy_enabled:
+		velocity = (direction * (SPEED + BOOST))
+
+	if Input.is_action_pressed("frenzy") and cast_frenzy:
+		_frenzy()
+
 	move_and_slide()
 	
 	
@@ -55,8 +68,8 @@ func _apply_acceleration(delta: float) -> void:
 	velocity += direction * acceleration * delta
 
 	# Clamp the velocity to the maximum speed
-	if velocity.length() > speed:
-		velocity = velocity.normalized() * speed
+	if velocity.length() > SPEED:
+		velocity = velocity.normalized() * SPEED
 
 func _apply_deceleration(delta: float) -> void:
 	if velocity.length() > 0:
@@ -83,7 +96,7 @@ func _dash() -> void:
 		can_dash = false
 		is_dashing = true
 		dash_direction = _get_mouse_direction()
-		velocity = dash_direction * speed * dash_speed_multiplier
+		velocity = dash_direction * SPEED * dash_speed_multiplier
 		
 		# Create a timer until dash ends
 		var dash_timer: SceneTreeTimer = get_tree().create_timer(0.3)
@@ -93,7 +106,7 @@ func _dash() -> void:
 func _end_dash() -> void:
 	is_dashing = false
 	can_dash = true
-	velocity = dash_direction * speed
+	velocity = dash_direction * SPEED
 
 
 # The player bites on an enemy giving bonus combos
@@ -103,7 +116,14 @@ func _chomp() -> void:
 
 # If combo meter is full, it activates a temporary speed boost and invincibility 
 func _frenzy() -> void:
-	pass
+	if cast_frenzy:
+		cast_frenzy = false
+		hud._frenzyCooldown()
+		frenzy_enabled = true
+		$CollisionShape2D.disabled = true
+		await get_tree().create_timer(3.0).timeout
+		frenzy_enabled = false
+		$CollisionShape2D.disabled = false
 
 
 # An enemy should call this function if the player gets hit

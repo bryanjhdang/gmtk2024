@@ -1,7 +1,18 @@
 extends Node
 
-var score: float = 100
+@onready var hud = %Hud
 
-func add_point(amount: float):
+var score: float
+
+func _ready() -> void:
+	score = 100
+	hud.update_score(score)
+	
+func add_point(amount: float) -> void:
 	score += amount
+	update_score_label()
 	print(score)
+
+func update_score_label() -> void:
+	if hud:
+		hud.update_score(score)
