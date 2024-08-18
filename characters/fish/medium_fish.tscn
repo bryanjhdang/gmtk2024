@@ -1,22 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://cw7h1v66q0iq0"]
+[gd_scene load_steps=5 format=3 uid="uid://bpjeiyothhspb"]
 
 [ext_resource type="Script" path="res://characters/fish/fish.gd" id="1_xxxji"]
 [ext_resource type="Texture2D" uid="uid://db0rf25g0ry6n" path="res://assets/fish-cooked-svgrepo-com.svg" id="2_cw50w"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6rmjw"]
-radius = 35.0
-height = 90.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iwbtb"]
+radius = 170.667
+height = 341.333
 
-[node name="MediumFish" type="Area2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6rmjw"]
+radius = 27.0
+height = 68.0
+
+[node name="MediumFish" type="Sprite2D"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_cw50w")
 script = ExtResource("1_xxxji")
 value = 20.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_cw50w")
+[node name="DetectionCone" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="DetectionCone"]
+position = Vector2(-3.05176e-05, -4.10536e-13)
+scale = Vector2(5, 5)
+shape = SubResource("CapsuleShape2D_iwbtb")
+
+[node name="Debug" type="Polygon2D" parent="DetectionCone/CollisionPolygon2D"]
+color = Color(1, 1, 1, 0.243137)
+polygon = PackedVector2Array(6.10352e-06, -170.667, 85.3333, -149.333, 149.333, -85.3333, 170.667, 8.21071e-14, 149.333, 85.3333, 85.3333, 149.333, 6.10352e-06, 170.667, -85.3333, 149.333, -149.333, 85.3333, -170.667, 8.21071e-14, -149.333, -85.3333, -85.3333, -149.333)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 rotation = 1.5708
+scale = Vector2(7.5, 7.5)
 shape = SubResource("CapsuleShape2D_6rmjw")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="DetectionCone" to="." method="_on_detection_cone_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_fish_body_entered"]

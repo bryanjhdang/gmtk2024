@@ -6,7 +6,7 @@ extends Node
 var score: float
 
 func _ready() -> void:
-	score = 100
+	score = 5
 	hud.update_score(score)
 	
 func add_point(amount: float) -> void:
