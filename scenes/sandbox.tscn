@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dobfx4bhn6edj" path="res://characters/player/player.tscn" id="1_oa5yd"]
 [ext_resource type="PackedScene" uid="uid://cstbqkds6d5hl" path="res://characters/fish/baby_fish.tscn" id="2_e1r8k"]
 [ext_resource type="PackedScene" uid="uid://cbsal0wiyon0b" path="res://characters/fish/small_fish.tscn" id="4_mw18f"]
-[ext_resource type="PackedScene" uid="uid://clroduu7vi62r" path="res://scenes/hud.tscn" id="5_f2q30"]
+[ext_resource type="PackedScene" uid="uid://21vyxb3yx326" path="res://scenes/hud.tscn" id="5_f2q30"]
 
 [node name="TestingPlayground" type="Node2D"]
 

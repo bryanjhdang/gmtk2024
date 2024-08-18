@@ -2,6 +2,7 @@ extends Node
 
 @onready var hud = %Hud
 
+
 var score: float
 
 func _ready() -> void:
@@ -16,3 +17,6 @@ func add_point(amount: float) -> void:
 func update_score_label() -> void:
 	if hud:
 		hud.update_score(score)
+		
+func set_game_over() -> void:
+	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
