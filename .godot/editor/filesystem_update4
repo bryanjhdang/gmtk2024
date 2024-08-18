@@ -1,0 +1,4 @@
+res://scenes/menu.tscn
+res://scenes/main_level.tscn
+res://scenes/hud.tscn
+res://characters/player/player.gd

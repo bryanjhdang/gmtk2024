@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://clroduu7vi62r"]
+[gd_scene load_steps=4 format=3 uid="uid://21vyxb3yx326"]
 
 [ext_resource type="Script" path="res://scripts/timer_label.gd" id="1_fr2vy"]
 [ext_resource type="Script" path="res://scenes/hud.gd" id="1_wgdbc"]

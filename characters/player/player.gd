@@ -3,51 +3,115 @@ extends CharacterBody2D
 @onready var game_manager = %GameManager
 @onready var hud = %Hud
 
-# Player stats
-const SPEED: float = 600.0
-const BOOST: float = 600.0
-
+# Player
+const SPEED: float = 500.0
+var acceleration: float = 5000.0
+var deceleration: float = 700.0
 var health: int = 3
-var mouse_position = null
-var BOUND = 2
+
+# Dash
+var can_dash: bool = true
+var is_dashing: bool = false
+var dash_direction: Vector2
+var dash_speed_multiplier: int = 2
+
+# Movement
+const BOUND: float = 2
+var mouse_position: Vector2
+var prev_direction: Vector2
+
+# Frenzy
+const BOOST: float = 600.0
 var cast_frenzy: bool = true
 var frenzy_enabled: bool = false
 
+
 # Character movement - the player follows the mouse when left click is held
 func _process(delta: float) -> void:
-	mouse_position = get_global_mouse_position()
-
 	# change the player size based on score
 	scale = Vector2((game_manager.score + 900) / 1000, (game_manager.score + 900) / 1000)
 	
+	if not is_dashing:
+		if Input.is_action_pressed("move"):
+			_apply_acceleration(delta)
+		else:
+			_apply_deceleration(delta)
+
 	#if Input.is_action_pressed("move"):
 	var direction: Vector2 = (mouse_position - position).normalized()
 	if frenzy_enabled:
 		velocity = (direction * (SPEED + BOOST))
-	else:
-		velocity = (direction * (SPEED))
-	
+
 	if Input.is_action_pressed("frenzy") and cast_frenzy:
 		_frenzy()
+
+	move_and_slide()
 	
-	if _player_is_not_stationary():
-		move_and_slide()
+	
+	# Handle abilities
+	if Input.is_action_just_pressed("dash"):
+		_dash()
+	if Input.is_action_just_pressed("chomp"):
+		_chomp()
 
 
-func _player_is_not_stationary() -> bool:
+func _apply_dash_movement(delta: float) -> void:
+	pass
+
+func _apply_acceleration(delta: float) -> void:
+	var direction = _get_mouse_direction()
+	
+	# Check if the player is trying to move in the opposite direction
+	if velocity.dot(direction) < 0:
+		velocity -= velocity.normalized() * deceleration * delta
+
+	velocity += direction * acceleration * delta
+
+	# Clamp the velocity to the maximum speed
+	if velocity.length() > SPEED:
+		velocity = velocity.normalized() * SPEED
+
+func _apply_deceleration(delta: float) -> void:
+	if velocity.length() > 0:
+		velocity -= velocity.normalized() * deceleration * delta
+	
+	# Stop the player when the velocity is very small to avoid infinite sliding
+	if velocity.length() < 1:
+		velocity = Vector2()
+
+
+func _get_mouse_direction() -> Vector2:
+	mouse_position = get_global_mouse_position()
+	return (mouse_position - position).normalized()
+
+
+func _is_player_stationary() -> bool:
 	if abs(mouse_position.x - position.x) < BOUND and abs(mouse_position.y - position.y) < BOUND:
 		return false
 	return true
 
 
-# Moves the player forward a certain amount
 func _dash() -> void:
-	print("dash")
+	if can_dash:
+		can_dash = false
+		is_dashing = true
+		dash_direction = _get_mouse_direction()
+		velocity = dash_direction * SPEED * dash_speed_multiplier
+		
+		# Create a timer until dash ends
+		var dash_timer: SceneTreeTimer = get_tree().create_timer(0.3)
+		dash_timer.timeout.connect(_end_dash)
+
+
+func _end_dash() -> void:
+	is_dashing = false
+	can_dash = true
+	velocity = dash_direction * SPEED
 
 
 # The player bites on an enemy giving bonus combos
 func _chomp() -> void:
-	pass
+	print("chomp")
 
 
 # If combo meter is full, it activates a temporary speed boost and invincibility 
@@ -60,6 +124,7 @@ func _frenzy() -> void:
 		await get_tree().create_timer(3.0).timeout
 		frenzy_enabled = false
 		$CollisionShape2D.disabled = false
+
 
 # An enemy should call this function if the player gets hit
 func get_hurt(damage: int) -> void:
