@@ -8,6 +8,9 @@
 
 [node name="TestingPlayground" type="Node2D"]
 
+[node name="Hud" parent="." instance=ExtResource("5_f2q30")]
+unique_name_in_owner = true
+
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("1_kft4r")
@@ -17,11 +20,6 @@ position = Vector2(270, 143)
 
 [node name="BabyFish" parent="." instance=ExtResource("2_e1r8k")]
 position = Vector2(604, 211)
-value = 0.0
 
 [node name="SmallFish" parent="." instance=ExtResource("4_mw18f")]
 position = Vector2(433, 337)
-value = 0.0
-
-[node name="Hud" parent="." instance=ExtResource("5_f2q30")]
-position = Vector2(8, -4)

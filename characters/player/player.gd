@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var game_manager = %GameManager
+@onready var hud = %Hud
 
 # Player stats
 const SPEED: float = 600.0
@@ -51,6 +52,7 @@ func _chomp() -> void:
 
 # If combo meter is full, it activates a temporary speed boost and invincibility 
 func _frenzy() -> void:
+	hud._frenzyCooldown(false)
 	boost_enabled = true
 	$CollisionShape2D.disabled = true
 	await get_tree().create_timer(3.0).timeout
@@ -61,6 +63,7 @@ func _frenzy() -> void:
 func frenzy_cooldown() -> void:
 	cast_frenzy = false
 	await get_tree().create_timer(10.0).timeout
+	hud._frenzyCooldown(true)
 	cast_frenzy = true
 
 # An enemy should call this function if the player gets hit

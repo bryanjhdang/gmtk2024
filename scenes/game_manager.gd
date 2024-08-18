@@ -1,15 +1,18 @@
 extends Node
 
-var score: float = 100
+@onready var hud = %Hud
 
-@onready var score_label = %scoreLabel
+var score: float
 
-
-func add_point(amount: float):
+func _ready() -> void:
+	score = 100
+	hud.update_score(score)
+	
+func add_point(amount: float) -> void:
 	score += amount
 	update_score_label()
 	print(score)
 
 func update_score_label() -> void:
-	if score_label:
-		score_label.update_score(score)
+	if hud:
+		hud.update_score(score)
