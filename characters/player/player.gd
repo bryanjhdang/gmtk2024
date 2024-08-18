@@ -11,7 +11,7 @@ var health: int = 3
 var mouse_position = null
 var BOUND = 2
 var cast_frenzy: bool = true
-var boost_enabled: bool = false
+var frenzy_enabled: bool = false
 
 # Character movement - the player follows the mouse when left click is held
 func _process(delta: float) -> void:
@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 	
 	#if Input.is_action_pressed("move"):
 	var direction: Vector2 = (mouse_position - position).normalized()
-	if boost_enabled:
+	if frenzy_enabled:
 		velocity = (direction * (SPEED + BOOST))
 	else:
 		velocity = (direction * (SPEED))
@@ -52,19 +52,14 @@ func _chomp() -> void:
 
 # If combo meter is full, it activates a temporary speed boost and invincibility 
 func _frenzy() -> void:
-	hud._frenzyCooldown(false)
-	boost_enabled = true
-	$CollisionShape2D.disabled = true
-	await get_tree().create_timer(3.0).timeout
-	boost_enabled = false
-	$CollisionShape2D.disabled = false
-	frenzy_cooldown()
-
-func frenzy_cooldown() -> void:
-	cast_frenzy = false
-	await get_tree().create_timer(10.0).timeout
-	hud._frenzyCooldown(true)
-	cast_frenzy = true
+	if cast_frenzy:
+		cast_frenzy = false
+		hud._frenzyCooldown()
+		frenzy_enabled = true
+		$CollisionShape2D.disabled = true
+		await get_tree().create_timer(3.0).timeout
+		frenzy_enabled = false
+		$CollisionShape2D.disabled = false
 
 # An enemy should call this function if the player gets hit
 func get_hurt(damage: int) -> void:
