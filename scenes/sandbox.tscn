@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://dobfx4bhn6edj" path="res://characters/player/player.tscn" id="1_oa5yd"]
 [ext_resource type="PackedScene" uid="uid://cstbqkds6d5hl" path="res://characters/fish/baby_fish.tscn" id="2_e1r8k"]
 [ext_resource type="PackedScene" uid="uid://cbsal0wiyon0b" path="res://characters/fish/small_fish.tscn" id="4_mw18f"]
-[ext_resource type="PackedScene" path="res://characters/fish/medium_fish.tscn" id="5_6w228"]
-[ext_resource type="PackedScene" path="res://characters/fish/large_fish.tscn" id="6_7m8r5"]
+[ext_resource type="PackedScene" uid="uid://cw7h1v66q0iq0" path="res://characters/fish/medium_fish.tscn" id="5_6w228"]
+[ext_resource type="PackedScene" uid="uid://cybyxms6m0nrf" path="res://characters/fish/large_fish.tscn" id="6_7m8r5"]
 
 [node name="TestingPlayground" type="Node2D"]
 
