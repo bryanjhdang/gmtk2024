@@ -2,9 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/timer_label.gd" id="1_fr2vy"]
 [ext_resource type="Script" path="res://scenes/hud.gd" id="1_wgdbc"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_ma83s"]
-font_size = 20
+[ext_resource type="PackedScene" uid="uid://bxxipetcqhoje" path="res://scenes/FrenzyIcon.tscn" id="3_hfyng"]
 
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_wgdbc")
@@ -28,16 +26,10 @@ offset_bottom = 43.0
 theme_override_font_sizes/font_size = 24
 text = "score"
 
-[node name="frenzyLabel" type="Label" parent="."]
-offset_left = 8.0
-offset_top = 612.0
-offset_right = 67.0
-offset_bottom = 640.0
-text = "Frenzy"
-label_settings = SubResource("LabelSettings_ma83s")
-horizontal_alignment = 1
+[node name="FrenzyIcon" parent="." instance=ExtResource("3_hfyng")]
+position = Vector2(16, 552)
 
-[node name="Timer" type="Timer" parent="frenzyLabel"]
+[node name="Timer" type="Timer" parent="FrenzyIcon"]
 wait_time = 10.0
 
-[connection signal="timeout" from="frenzyLabel/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="FrenzyIcon/Timer" to="." method="_on_timer_timeout"]
