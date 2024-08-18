@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbgtnw3netm33"]
+[gd_scene load_steps=3 format=3 uid="uid://mecby3dl0n8r"]
 
 [ext_resource type="Script" path="res://scenes/game_over.gd" id="1_mtux7"]
 [ext_resource type="FontFile" uid="uid://tt4u3fqh87lr" path="res://fonts/PixelatedLove/PixelatedLove/pixelated-loveNew.ttf" id="2_l6m0v"]

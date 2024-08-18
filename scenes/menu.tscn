@@ -1,11 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://cw0meiasgss1q"]
+[gd_scene load_steps=5 format=3 uid="uid://cw0meiasgss1q"]
 
+[ext_resource type="Script" path="res://scenes/menu.gd" id="1_oqqlg"]
 [ext_resource type="FontFile" uid="uid://tt4u3fqh87lr" path="res://fonts/PixelatedLove/PixelatedLove/pixelated-loveNew.ttf" id="1_vv163"]
 [ext_resource type="Script" path="res://scripts/menu_start_game.gd" id="2_osacb"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qu4s5"]
 
 [node name="Menu" type="Node2D"]
+script = ExtResource("1_oqqlg")
 
 [node name="gameTitle" type="Label" parent="."]
 offset_left = 184.0
@@ -29,19 +31,74 @@ theme_override_font_sizes/font_size = 32
 text = "HIGH SCORES"
 horizontal_alignment = 1
 
-[node name="highscores" type="Label" parent="."]
-offset_left = 504.0
-offset_top = 304.0
-offset_right = 648.0
-offset_bottom = 480.0
+[node name="highscores1" type="Label" parent="."]
+offset_left = 517.0
+offset_top = 305.0
+offset_right = 661.0
+offset_bottom = 341.0
 theme_override_constants/line_spacing = 4
 theme_override_fonts/font = ExtResource("1_vv163")
 theme_override_font_sizes/font_size = 24
-text = "1. 00000000
-2. 00000000
-3. 00000000
-4. 00000000
-5. 00000000"
+text = "00000000"
+horizontal_alignment = 1
+
+[node name="highscores2" type="Label" parent="."]
+offset_left = 517.0
+offset_top = 341.0
+offset_right = 661.0
+offset_bottom = 377.0
+theme_override_constants/line_spacing = 4
+theme_override_fonts/font = ExtResource("1_vv163")
+theme_override_font_sizes/font_size = 24
+text = "00000000"
+horizontal_alignment = 1
+
+[node name="highscores3" type="Label" parent="."]
+offset_left = 517.0
+offset_top = 377.0
+offset_right = 661.0
+offset_bottom = 412.0
+theme_override_constants/line_spacing = 4
+theme_override_fonts/font = ExtResource("1_vv163")
+theme_override_font_sizes/font_size = 24
+text = "00000000"
+horizontal_alignment = 1
+
+[node name="highscores4" type="Label" parent="."]
+offset_left = 516.0
+offset_top = 413.0
+offset_right = 662.0
+offset_bottom = 452.0
+theme_override_constants/line_spacing = 4
+theme_override_fonts/font = ExtResource("1_vv163")
+theme_override_font_sizes/font_size = 24
+text = "00000000"
+horizontal_alignment = 1
+
+[node name="highscores5" type="Label" parent="."]
+offset_left = 517.0
+offset_top = 449.0
+offset_right = 661.0
+offset_bottom = 485.0
+theme_override_constants/line_spacing = 4
+theme_override_fonts/font = ExtResource("1_vv163")
+theme_override_font_sizes/font_size = 24
+text = "00000000"
+horizontal_alignment = 1
+
+[node name="highscoreslabel" type="Label" parent="."]
+offset_left = 498.0
+offset_top = 305.0
+offset_right = 537.0
+offset_bottom = 481.0
+theme_override_constants/line_spacing = 4
+theme_override_fonts/font = ExtResource("1_vv163")
+theme_override_font_sizes/font_size = 24
+text = "1.
+2.
+3.
+4.
+5."
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="."]
