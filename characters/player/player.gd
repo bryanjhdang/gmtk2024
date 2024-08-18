@@ -3,24 +3,22 @@ extends CharacterBody2D
 @onready var game_manager = %GameManager
 
 # Player
-var speed: float = 600.0
+var speed: float = 500.0
 var acceleration: float = 5000.0
-var deceleration: float = 600.0
+var deceleration: float = 700.0
 var health: int = 3
+
+# Dash
+var can_dash: bool = true
+var is_dashing: bool = false
+var dash_direction: Vector2
+var dash_speed_multiplier: int = 2
 
 # Movement
 const BOUND: float = 2
-var mouse_position: Vector2 = Vector2(0,0)
+var mouse_position: Vector2
 var prev_direction: Vector2
 
-func get_input():
-	var input_direction: Vector2 = Input.get_vector("left", "right", "up", "down")
-	
-	if input_direction != Vector2(0, 0):
-		velocity = input_direction * speed
-		prev_direction = input_direction
-	else:
-		velocity = prev_direction * speed
 
 # Character movement - the player follows the mouse when left click is held
 func _process(delta: float) -> void:
@@ -28,12 +26,11 @@ func _process(delta: float) -> void:
 	scale = Vector2((game_manager.score + 900) / 1000, (game_manager.score + 900) / 1000)
 	
 	# Handle movement
-	mouse_position = get_global_mouse_position()
-	#var mouse_direction = _get_mouse_direction()
-	if Input.is_action_pressed("move"):
-		_apply_acceleration(delta)
-	else:
-		_apply_deceleration(delta)
+	if not is_dashing:
+		if Input.is_action_pressed("move"):
+			_apply_acceleration(delta)
+		else:
+			_apply_deceleration(delta)
 	
 	move_and_slide()
 	
@@ -45,12 +42,14 @@ func _process(delta: float) -> void:
 		_chomp()
 
 
+func _apply_dash_movement(delta: float) -> void:
+	pass
+
 func _apply_acceleration(delta: float) -> void:
 	var direction = _get_mouse_direction()
 	
 	# Check if the player is trying to move in the opposite direction
 	if velocity.dot(direction) < 0:
-	# Apply more deceleration when turning around
 		velocity -= velocity.normalized() * deceleration * delta
 
 	velocity += direction * acceleration * delta
@@ -69,6 +68,7 @@ func _apply_deceleration(delta: float) -> void:
 
 
 func _get_mouse_direction() -> Vector2:
+	mouse_position = get_global_mouse_position()
 	return (mouse_position - position).normalized()
 
 
@@ -78,13 +78,22 @@ func _is_player_stationary() -> bool:
 	return true
 
 
-# Moves the player forward a certain amount
 func _dash() -> void:
-	speed *= 3
-	# lock direction
-	await get_tree().create_timer(0.2).timeout
-	# unlock speed and direction
-	speed /= 3
+	if can_dash:
+		can_dash = false
+		is_dashing = true
+		dash_direction = _get_mouse_direction()
+		velocity = dash_direction * speed * dash_speed_multiplier
+		
+		# Create a timer until dash ends
+		var dash_timer: SceneTreeTimer = get_tree().create_timer(0.3)
+		dash_timer.timeout.connect(_end_dash)
+
+
+func _end_dash() -> void:
+	is_dashing = false
+	can_dash = true
+	velocity = dash_direction * speed
 
 
 # The player bites on an enemy giving bonus combos
