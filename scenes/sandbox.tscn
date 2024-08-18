@@ -23,7 +23,10 @@ autostart = true
 
 [node name="Player" parent="." instance=ExtResource("1_oa5yd")]
 unique_name_in_owner = true
-position = Vector2(270, 143)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 
 [node name="BabyFish" parent="." instance=ExtResource("2_e1r8k")]
 position = Vector2(771, 133)
