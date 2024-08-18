@@ -8,5 +8,4 @@ func _on_body_entered(body):
 		game_manager.add_point(value)
 		queue_free()
 	else:
-		print("lol you died")
-		get_tree().paused = true
+		game_manager.set_game_over()
