@@ -8,3 +8,4 @@ res://scenes/game_manager.gd
 res://scripts/score_label.gd
 res://scripts/timer_label.gd
 res://scenes/hud.tscn
+res://scripts/button.gd
