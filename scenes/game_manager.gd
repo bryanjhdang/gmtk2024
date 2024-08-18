@@ -28,4 +28,5 @@ func _on_timer_timeout():
 	enemy_to_spawn.position = Vector2(x, y)
 	add_child(enemy_to_spawn)
 	
-	
+func set_game_over() -> void:
+	get_tree().change_scene_to_file("res://scenes/game_over.tscn")

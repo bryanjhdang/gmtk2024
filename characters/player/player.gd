@@ -44,6 +44,9 @@ func _process(delta: float) -> void:
 
 	if Input.is_action_pressed("frenzy") and cast_frenzy:
 		_frenzy()
+		
+	if Input.is_action_pressed("suicide"):
+		_suicide()
 
 	move_and_slide()
 	
@@ -125,6 +128,11 @@ func _frenzy() -> void:
 		frenzy_enabled = false
 		$CollisionShape2D.disabled = false
 
+# DEBUG: kill yourself NOW.
+func _suicide() -> void:
+	print("dying")
+	_die()
+
 
 # An enemy should call this function if the player gets hit
 func get_hurt(damage: int) -> void:
@@ -142,4 +150,6 @@ func _damaged() -> void:
 
 func _die() -> void:
 	# play death animation, call end game
+	
+	game_manager.set_game_over()
 	print("died")
