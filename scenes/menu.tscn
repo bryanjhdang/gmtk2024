@@ -19,6 +19,7 @@ BIG FISH GET BIGGER"
 horizontal_alignment = 1
 
 [node name="highscoreTitle" type="Label" parent="gameTitle"]
+layout_mode = 0
 offset_left = 280.0
 offset_top = 192.0
 offset_right = 504.0
