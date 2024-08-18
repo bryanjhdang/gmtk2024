@@ -36,3 +36,8 @@ offset_bottom = 640.0
 text = "Frenzy"
 label_settings = SubResource("LabelSettings_ma83s")
 horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="frenzyLabel"]
+wait_time = 10.0
+
+[connection signal="timeout" from="frenzyLabel/Timer" to="." method="_on_timer_timeout"]
