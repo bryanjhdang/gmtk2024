@@ -18,6 +18,9 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 script = ExtResource("1_kft4r")
 
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
 [node name="Player" parent="." instance=ExtResource("1_oa5yd")]
 unique_name_in_owner = true
 position = Vector2(270, 143)
@@ -36,3 +39,5 @@ position = Vector2(957, 296)
 
 [node name="BossFish" parent="." instance=ExtResource("8_neg6l")]
 position = Vector2(190, 506)
+
+[connection signal="timeout" from="Timer" to="GameManager" method="_on_timer_timeout"]
