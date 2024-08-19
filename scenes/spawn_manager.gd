@@ -1,18 +1,17 @@
 extends Node2D
 
 # @onready var game_manager: Node = owner.get_node("GameManager")
-
 var enemy = preload("res://characters/enemy/enemy.tscn")
 var num_enemies_spawned: int = 0
 var enemy_types: Array = ["fish-enemy.png", "fish-cooked-svgrepo-com.svg", "puffer-fish.webp", "karp-fish.png"] 
 var enemy_size_values: Array = [1, 5, 20, 50, 500]
-
 
 func get_new_enemy(score: int = 100):		
 	var enemy = Enemy.enemy_factory()
 	
 	# adjust the fish's values	
 	#enemy.scale *= 1.2
+	#enemy.speed = randf_range(1, 100)
 	
 	# TODO choose specific sprite depending on the type & size generated
 	var type = randi_range(0, 3)
