@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://clroduu7vi62r"]
 
 [ext_resource type="Script" path="res://scripts/timer_label.gd" id="1_fr2vy"]
-[ext_resource type="Script" path="res://scenes/hud.gd" id="1_wgdbc"]
-[ext_resource type="PackedScene" uid="uid://bxxipetcqhoje" path="res://scenes/FrenzyIcon.tscn" id="3_hfyng"]
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_wgdbc"]
+[ext_resource type="PackedScene" uid="uid://bxxipetcqhoje" path="res://scenes/frenzy_icon.tscn" id="3_hfyng"]
 
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_wgdbc")

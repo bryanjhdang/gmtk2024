@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bnl61m2fo57p2"]
 
 [ext_resource type="Texture2D" uid="uid://07p4hdqlcu0q" path="res://assets/shark_cutout.png" id="1_wj2nx"]
-[ext_resource type="Script" path="res://scripts/fish.gd" id="2_olh0c"]
+[ext_resource type="Script" path="res://scripts/shark.gd" id="2_uc77r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6rmjw"]
 radius = 370.0
@@ -13,7 +13,7 @@ radius = 2756.84
 [node name="shark" type="Sprite2D"]
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_wj2nx")
-script = ExtResource("2_olh0c")
+script = ExtResource("2_uc77r")
 value = 500.0
 fish_detected_speed = 3.0
 
