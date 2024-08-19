@@ -31,22 +31,18 @@ func _process(delta: float) -> void:
 	# change the player size based on score
 	scale = Vector2((game_manager.score + 900) / 1000, (game_manager.score + 900) / 1000)
 	
-	_rotate_player()
-	
+	#prevent spinout of sprite model
+	var distance: Vector2 = get_global_mouse_position() - position
+	if ((pow(distance.x, 2) + pow(distance.y, 2)) > 0):
+		_rotate_player()
+		
 	if not is_dashing:
 		if Input.is_action_pressed("move"):
 			_apply_acceleration(delta)
 		else:
 			_apply_deceleration(delta)
-
-	#if Input.is_action_pressed("move"):
-	var direction: Vector2 = (mouse_position - position).normalized()
-	if frenzy_enabled:
-		velocity = (direction * (SPEED + BOOST))
-
-	if Input.is_action_pressed("frenzy") and cast_frenzy:
-		_frenzy()
 		
+	# for testing purposes
 	if Input.is_action_pressed("suicide"):
 		_suicide()
 
@@ -58,6 +54,8 @@ func _process(delta: float) -> void:
 		_dash()
 	if Input.is_action_just_pressed("chomp"):
 		_chomp()
+	if Input.is_action_pressed("frenzy"):
+		_frenzy()
 
 
 func _rotate_player() -> void:
@@ -65,10 +63,10 @@ func _rotate_player() -> void:
 	var direction = mouse_position - global_position
 
 	# Flip the sprite based on the horizontal direction
-	if direction.x < 0:  # Mouse is to the left
+	if direction.x < -1:  # Mouse is to the left
 		self.scale = Vector2(-1,1)
 		rotation = direction.angle() + PI
-	else:  # Mouse is to the right
+	elif direction.x > 1:  # Mouse is to the right
 		self.scale = Vector2(1,1)
 		rotation = direction.angle()
 
@@ -86,7 +84,10 @@ func _apply_acceleration(delta: float) -> void:
 
 	# Clamp the velocity to the maximum speed
 	if velocity.length() > SPEED:
-		velocity = velocity.normalized() * SPEED
+		if frenzy_enabled:
+			velocity = velocity.normalized() * (SPEED + BOOST)
+		else:
+			velocity = velocity.normalized() * SPEED
 
 func _apply_deceleration(delta: float) -> void:
 	if velocity.length() > 0:

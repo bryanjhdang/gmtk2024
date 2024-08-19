@@ -1,6 +1,5 @@
 extends CanvasLayer
 
-@onready var frenzyTimer = $frenzyLabel/Timer
 @onready var player = %Player
 @onready var frenzy_icon = $FrenzyIcon
 @onready var timer = $FrenzyIcon/Timer
