@@ -6,7 +6,7 @@ var score: float
 var enemy = preload("res://characters/enemy/enemy_base.tscn")
 
 func _ready() -> void:
-	score = 100
+	score = 5
 	hud.update_score(score)
 	
 func add_point(amount: float) -> void:
