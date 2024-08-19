@@ -22,7 +22,7 @@ script = ExtResource("1_kft4r")
 [node name="SpawnManager" parent="." instance=ExtResource("3_ipm52")]
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.579
+wait_time = 0.5
 autostart = true
 
 [node name="Player" parent="." instance=ExtResource("1_oa5yd")]
