@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvs33if3pj5hf"]
+[gd_scene load_steps=5 format=3 uid="uid://cw7h1v66q0iq0"]
 
 [ext_resource type="Texture2D" uid="uid://8tfrbp5wx0s1" path="res://assets/pufferfish_cutout.png" id="1_vvk22"]
-[ext_resource type="Script" path="res://characters/fish/fish.gd" id="1_xxxji"]
+[ext_resource type="Script" path="res://characters/fish/pufferfish.gd" id="2_brr73"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6rmjw"]
 radius = 361.666
@@ -13,7 +13,7 @@ radius = 1435.01
 [node name="Pufferfish" type="Sprite2D"]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_vvk22")
-script = ExtResource("1_xxxji")
+script = ExtResource("2_brr73")
 value = 15.0
 
 [node name="fishBody" type="Area2D" parent="."]

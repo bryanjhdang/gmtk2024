@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpm7jbdma6473"]
+[gd_scene load_steps=5 format=3 uid="uid://cstbqkds6d5hl"]
 
-[ext_resource type="Script" path="res://characters/fish/fish.gd" id="1_bi5rm"]
 [ext_resource type="Texture2D" uid="uid://cjjoodyxyslee" path="res://assets/tadpole_cutout.png" id="1_tb1rv"]
+[ext_resource type="Script" path="res://characters/fish/tadpole.gd" id="2_0prfy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6rmjw"]
 radius = 180.0
@@ -13,7 +13,7 @@ radius = 1670.27
 [node name="tadpole" type="Sprite2D"]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_tb1rv")
-script = ExtResource("1_bi5rm")
+script = ExtResource("2_0prfy")
 value = 1.0
 
 [node name="fishBody" type="Area2D" parent="."]

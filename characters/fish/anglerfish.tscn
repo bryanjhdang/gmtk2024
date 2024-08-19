@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bn302uvlxvpch"]
+[gd_scene load_steps=5 format=3 uid="uid://cybyxms6m0nrf"]
 
-[ext_resource type="Script" path="res://characters/fish/fish.gd" id="1_blv8a"]
 [ext_resource type="Texture2D" uid="uid://b8vt58rhlcqoi" path="res://assets/anglerfish_cutout.png" id="1_rh6lt"]
+[ext_resource type="Script" path="res://characters/fish/anglerfish.gd" id="2_3ke2l"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6rmjw"]
 radius = 518.666
@@ -13,7 +13,7 @@ radius = 1949.64
 [node name="Anglerfish" type="Sprite2D"]
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_rh6lt")
-script = ExtResource("1_blv8a")
+script = ExtResource("2_3ke2l")
 value = 50.0
 
 [node name="fishBody" type="Area2D" parent="."]

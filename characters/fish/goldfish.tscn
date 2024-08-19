@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://rqkm2ndrhsa"]
+[gd_scene load_steps=5 format=3 uid="uid://coos4ewbgwvvi"]
 
 [ext_resource type="Texture2D" uid="uid://b8ydw56fw8nu4" path="res://assets/regfish_cutout.png" id="1_pb5ck"]
-[ext_resource type="Script" path="res://characters/fish/fish.gd" id="2_5dkm5"]
+[ext_resource type="Script" path="res://characters/fish/goldfish.gd" id="2_3fhim"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6rmjw"]
 radius = 258.333
@@ -13,7 +13,7 @@ radius = 1525.01
 [node name="Goldfish" type="Sprite2D"]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_pb5ck")
-script = ExtResource("2_5dkm5")
+script = ExtResource("2_3fhim")
 value = 1.0
 
 [node name="fishBody" type="Area2D" parent="."]
