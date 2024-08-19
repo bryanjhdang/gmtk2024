@@ -4,15 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://b8vt58rhlcqoi" path="res://assets/anglerfish_cutout.png" id="2_55u74"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6rmjw"]
-radius = 43.0
-height = 114.0
+radius = 118.0
+height = 378.0
 
 [node name="Anglerfish" type="Area2D"]
 script = ExtResource("1_blv8a")
 value = 50.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_55u74")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
