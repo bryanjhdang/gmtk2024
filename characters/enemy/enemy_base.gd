@@ -10,6 +10,8 @@ var size_x: float
 var size_y: float
 var value: float = 1
 
+
+
 # constructor for a enemy base object, passed in parameters modify the base object
 # to construct an upgraded enemy
 static func new_enemy(type: String, size_x: float, size_y: float, value: float) -> EnemyBase:
@@ -29,3 +31,5 @@ func _on_body_entered(body):
 	if game_manager.score > value:
 		game_manager.add_point(value)
 	queue_free()
+
+	
