@@ -1,13 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bd1y1mjb4waxu"]
+[gd_scene load_steps=6 format=3 uid="uid://bd1y1mjb4waxu"]
 
 [ext_resource type="Script" path="res://scenes/game_manager.gd" id="1_kft4r"]
 [ext_resource type="PackedScene" uid="uid://dobfx4bhn6edj" path="res://characters/player/player.tscn" id="1_oa5yd"]
-[ext_resource type="PackedScene" uid="uid://cstbqkds6d5hl" path="res://characters/fish/tadpole.tscn" id="2_e1r8k"]
-[ext_resource type="PackedScene" uid="uid://cbsal0wiyon0b" path="res://characters/fish/reg_fish.tscn" id="4_mw18f"]
 [ext_resource type="PackedScene" uid="uid://clroduu7vi62r" path="res://scenes/hud.tscn" id="5_f2q30"]
-[ext_resource type="PackedScene" uid="uid://cw7h1v66q0iq0" path="res://characters/fish/pufferfish.tscn" id="6_y8rkf"]
-[ext_resource type="PackedScene" uid="uid://cybyxms6m0nrf" path="res://characters/fish/anglerfish.tscn" id="7_mo1x5"]
-[ext_resource type="PackedScene" uid="uid://553m81mktncj" path="res://characters/fish/shark.tscn" id="8_neg6l"]
+[ext_resource type="PackedScene" uid="uid://bvs33if3pj5hf" path="res://characters/fish/medium_fish.tscn" id="6_y8rkf"]
+[ext_resource type="PackedScene" uid="uid://d01bahdob30ln" path="res://characters/fish/boss_fish.tscn" id="8_neg6l"]
 
 [node name="TestingPlayground" type="Node2D"]
 
@@ -19,28 +16,19 @@ unique_name_in_owner = true
 script = ExtResource("1_kft4r")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
 autostart = true
 
 [node name="Player" parent="." instance=ExtResource("1_oa5yd")]
 unique_name_in_owner = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
-[node name="BabyFish" parent="." instance=ExtResource("2_e1r8k")]
-position = Vector2(771, 133)
-
-[node name="SmallFish" parent="." instance=ExtResource("4_mw18f")]
-position = Vector2(589, 246)
-
 [node name="MediumFish" parent="." instance=ExtResource("6_y8rkf")]
-position = Vector2(939, 544)
-
-[node name="LargeFish" parent="." instance=ExtResource("7_mo1x5")]
-position = Vector2(957, 296)
+position = Vector2(310, 152)
 
 [node name="BossFish" parent="." instance=ExtResource("8_neg6l")]
-position = Vector2(190, 506)
+position = Vector2(693, 427)
+
+[connection signal="timeout" from="Timer" to="GameManager" method="_on_timer_timeout"]
