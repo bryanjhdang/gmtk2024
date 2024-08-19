@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bn302uvlxvpch"]
+[gd_scene load_steps=5 format=3 uid="uid://d01bahdob30ln"]
 
-[ext_resource type="Script" path="res://characters/fish/fish.gd" id="1_blv8a"]
-[ext_resource type="Texture2D" uid="uid://db0rf25g0ry6n" path="res://assets/fish-cooked-svgrepo-com.svg" id="2_j0sbq"]
+[ext_resource type="Script" path="res://characters/fish/fish.gd" id="1_1aioc"]
+[ext_resource type="Texture2D" uid="uid://07p4hdqlcu0q" path="res://assets/shark_cutout.png" id="1_wj2nx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6rmjw"]
 radius = 180.0
@@ -10,11 +10,11 @@ height = 493.333
 [sub_resource type="CircleShape2D" id="CircleShape2D_3r7vv"]
 radius = 1000.09
 
-[node name="LargeFish" type="Sprite2D"]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_j0sbq")
-script = ExtResource("1_blv8a")
-value = 50.0
+[node name="shark" type="Sprite2D"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_wj2nx")
+script = ExtResource("1_1aioc")
+value = 500.0
 
 [node name="fishBody" type="Area2D" parent="."]
 scale = Vector2(0.15, 0.15)

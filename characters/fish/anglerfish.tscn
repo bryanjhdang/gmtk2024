@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://rqkm2ndrhsa"]
+[gd_scene load_steps=5 format=3 uid="uid://bn302uvlxvpch"]
 
-[ext_resource type="Script" path="res://characters/fish/fish.gd" id="1_kwj5d"]
-[ext_resource type="Texture2D" uid="uid://db0rf25g0ry6n" path="res://assets/fish-cooked-svgrepo-com.svg" id="2_3oenp"]
+[ext_resource type="Script" path="res://characters/fish/fish.gd" id="1_blv8a"]
+[ext_resource type="Texture2D" uid="uid://b8vt58rhlcqoi" path="res://assets/anglerfish_cutout.png" id="1_rh6lt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6rmjw"]
 radius = 180.0
@@ -10,11 +10,11 @@ height = 493.333
 [sub_resource type="CircleShape2D" id="CircleShape2D_3r7vv"]
 radius = 1000.09
 
-[node name="SmallFish" type="Sprite2D"]
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("2_3oenp")
-script = ExtResource("1_kwj5d")
-value = 1.0
+[node name="Anglerfish" type="Sprite2D"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_rh6lt")
+script = ExtResource("1_blv8a")
+value = 50.0
 
 [node name="fishBody" type="Area2D" parent="."]
 scale = Vector2(0.15, 0.15)

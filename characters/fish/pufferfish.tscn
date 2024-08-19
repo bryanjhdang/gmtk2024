@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bvs33if3pj5hf"]
 
+[ext_resource type="Texture2D" uid="uid://8tfrbp5wx0s1" path="res://assets/pufferfish_cutout.png" id="1_vvk22"]
 [ext_resource type="Script" path="res://characters/fish/fish.gd" id="1_xxxji"]
-[ext_resource type="Texture2D" uid="uid://db0rf25g0ry6n" path="res://assets/fish-cooked-svgrepo-com.svg" id="2_cw50w"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6rmjw"]
 radius = 180.0
@@ -10,9 +10,9 @@ height = 493.333
 [sub_resource type="CircleShape2D" id="CircleShape2D_3r7vv"]
 radius = 1000.09
 
-[node name="MediumFish" type="Sprite2D"]
+[node name="Pufferfish" type="Sprite2D"]
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_cw50w")
+texture = ExtResource("1_vvk22")
 script = ExtResource("1_xxxji")
 value = 15.0
 
@@ -31,7 +31,6 @@ shape = SubResource("CapsuleShape2D_6rmjw")
 shape = SubResource("CircleShape2D_3r7vv")
 
 [node name="DEBUG" type="Polygon2D" parent="detectionRange"]
-scale = Vector2(1, 1)
 color = Color(1, 1, 1, 0.372549)
 polygon = PackedVector2Array(-6.66667, -1000, 513.333, -846.667, 866.667, -493.333, 1000, -6.66667, 886.667, 493.333, 533.333, 846.667, 0, 993.333, -506.667, 873.333, -866.667, 493.333, -1000, 6.66667, -840, -546.667, -466.667, -893.333)
 

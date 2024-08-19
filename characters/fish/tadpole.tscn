@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://d01bahdob30ln"]
+[gd_scene load_steps=5 format=3 uid="uid://cpm7jbdma6473"]
 
-[ext_resource type="Script" path="res://characters/fish/fish.gd" id="1_1aioc"]
-[ext_resource type="Texture2D" uid="uid://db0rf25g0ry6n" path="res://assets/fish-cooked-svgrepo-com.svg" id="2_ff0jp"]
+[ext_resource type="Script" path="res://characters/fish/fish.gd" id="1_bi5rm"]
+[ext_resource type="Texture2D" uid="uid://cjjoodyxyslee" path="res://assets/tadpole_cutout.png" id="1_tb1rv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6rmjw"]
 radius = 180.0
@@ -10,11 +10,11 @@ height = 493.333
 [sub_resource type="CircleShape2D" id="CircleShape2D_3r7vv"]
 radius = 1000.09
 
-[node name="BossFish" type="Sprite2D"]
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_ff0jp")
-script = ExtResource("1_1aioc")
-value = 500.0
+[node name="tadpole" type="Sprite2D"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_tb1rv")
+script = ExtResource("1_bi5rm")
+value = 1.0
 
 [node name="fishBody" type="Area2D" parent="."]
 scale = Vector2(0.15, 0.15)

@@ -1,19 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpm7jbdma6473"]
+[gd_scene load_steps=5 format=3 uid="uid://rqkm2ndrhsa"]
 
-[ext_resource type="Script" path="res://characters/fish/fish.gd" id="1_bi5rm"]
-[ext_resource type="Texture2D" uid="uid://db0rf25g0ry6n" path="res://assets/fish-cooked-svgrepo-com.svg" id="1_ponio"]
+[ext_resource type="Texture2D" uid="uid://b8ydw56fw8nu4" path="res://assets/regfish_cutout.png" id="1_pb5ck"]
+[ext_resource type="Script" path="res://characters/fish/fish.gd" id="2_5dkm5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6rmjw"]
-radius = 180.0
-height = 493.333
+radius = 258.333
+height = 866.666
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3r7vv"]
 radius = 1000.09
 
-[node name="BabyFish" type="Sprite2D"]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_ponio")
-script = ExtResource("1_bi5rm")
+[node name="Goldfish" type="Sprite2D"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_pb5ck")
+script = ExtResource("2_5dkm5")
 value = 1.0
 
 [node name="fishBody" type="Area2D" parent="."]
@@ -31,7 +31,6 @@ shape = SubResource("CapsuleShape2D_6rmjw")
 shape = SubResource("CircleShape2D_3r7vv")
 
 [node name="DEBUG" type="Polygon2D" parent="detectionRange"]
-scale = Vector2(1, 1)
 color = Color(1, 1, 1, 0.372549)
 polygon = PackedVector2Array(-6.66667, -1000, 513.333, -846.667, 866.667, -493.333, 1000, -6.66667, 886.667, 493.333, 533.333, 846.667, 0, 993.333, -506.667, 873.333, -866.667, 493.333, -1000, 6.66667, -840, -546.667, -466.667, -893.333)
 

@@ -22,9 +22,9 @@ func update_score_label() -> void:
 func _on_timer_timeout():
 	var x = randf_range(20, 1000)
 	var y = randf_range(20, 1000)
-	var enemy_to_spawn = EnemyBase.new_enemy("", 1.0, 1.0, 100)
-	enemy_to_spawn.position = Vector2(x, y)
-	add_child(enemy_to_spawn)
+	#var enemy_to_spawn = EnemyBase.new_enemy("", 1.0, 1.0, 100)
+	#enemy_to_spawn.position = Vector2(x, y)
+	#add_child(enemy_to_spawn)
 	
 func set_game_over() -> void:
 	self.addScore(score)
