@@ -8,21 +8,27 @@
 script = ExtResource("1_wgdbc")
 
 [node name="timerLabel" type="Label" parent="."]
-offset_left = 1042.0
-offset_right = 1152.0
-offset_bottom = 124.0
+offset_left = 1013.0
+offset_top = 1.0
+offset_right = 1123.0
+offset_bottom = 125.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
 theme_override_font_sizes/font_size = 64
 text = "00"
-horizontal_alignment = 1
+horizontal_alignment = 2
 vertical_alignment = 1
+text_direction = 2
 script = ExtResource("1_fr2vy")
 
 [node name="scoreLabel" type="Label" parent="."]
 unique_name_in_owner = true
-offset_left = 9.0
-offset_top = 9.0
-offset_right = 71.0
-offset_bottom = 43.0
+offset_left = 23.0
+offset_top = 16.0
+offset_right = 85.0
+offset_bottom = 50.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
 theme_override_font_sizes/font_size = 24
 text = "score"
 
