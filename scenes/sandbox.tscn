@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://scenes/game_manager.gd" id="1_kft4r"]
 [ext_resource type="PackedScene" uid="uid://dobfx4bhn6edj" path="res://characters/player/player.tscn" id="1_oa5yd"]
-[ext_resource type="PackedScene" uid="uid://cstbqkds6d5hl" path="res://characters/fish/baby_fish.tscn" id="2_e1r8k"]
+[ext_resource type="PackedScene" uid="uid://cstbqkds6d5hl" path="res://characters/fish/tadpole.tscn" id="2_e1r8k"]
 [ext_resource type="PackedScene" uid="uid://ddgbdij10ahjc" path="res://scenes/spawn_manager.tscn" id="3_ipm52"]
-[ext_resource type="PackedScene" uid="uid://cbsal0wiyon0b" path="res://characters/fish/small_fish.tscn" id="4_mw18f"]
+[ext_resource type="PackedScene" uid="uid://cbsal0wiyon0b" path="res://characters/fish/reg_fish.tscn" id="4_mw18f"]
 [ext_resource type="PackedScene" uid="uid://clroduu7vi62r" path="res://scenes/hud.tscn" id="5_f2q30"]
-[ext_resource type="PackedScene" uid="uid://cw7h1v66q0iq0" path="res://characters/fish/medium_fish.tscn" id="6_y8rkf"]
-[ext_resource type="PackedScene" uid="uid://cybyxms6m0nrf" path="res://characters/fish/large_fish.tscn" id="7_mo1x5"]
-[ext_resource type="PackedScene" uid="uid://553m81mktncj" path="res://characters/fish/boss_fish.tscn" id="8_neg6l"]
+[ext_resource type="PackedScene" uid="uid://cw7h1v66q0iq0" path="res://characters/fish/pufferfish.tscn" id="6_y8rkf"]
+[ext_resource type="PackedScene" uid="uid://cybyxms6m0nrf" path="res://characters/fish/anglerfish.tscn" id="7_mo1x5"]
+[ext_resource type="PackedScene" uid="uid://553m81mktncj" path="res://characters/fish/shark.tscn" id="8_neg6l"]
 
 [node name="TestingPlayground" type="Node2D"]
 

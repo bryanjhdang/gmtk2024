@@ -1,19 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://cbsal0wiyon0b"]
 
 [ext_resource type="Script" path="res://characters/fish/fish.gd" id="1_kwj5d"]
-[ext_resource type="Texture2D" uid="uid://db0rf25g0ry6n" path="res://assets/fish-cooked-svgrepo-com.svg" id="2_3oenp"]
+[ext_resource type="Texture2D" uid="uid://b8ydw56fw8nu4" path="res://assets/regfish_cutout.png" id="2_ton03"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6rmjw"]
 radius = 27.0
 height = 68.0
 
-[node name="SmallFish" type="Area2D"]
+[node name="RegFish" type="Area2D"]
 script = ExtResource("1_kwj5d")
 value = 5.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("2_3oenp")
+texture = ExtResource("2_ton03")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
