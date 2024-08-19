@@ -3,6 +3,7 @@ extends Node
 @onready var hud = %Hud
 
 var score: float
+var frenzy: bool = false
 
 func _ready() -> void:
 	score = 100
@@ -21,7 +22,7 @@ func set_game_over() -> void:
 	self.addScore(score)
 	Global.latestScore = score
 	print("latest score: %d" % score)
-	get_tree().change_scene_to_file("res://scenes/game_over.tscn")
+	get_tree().change_scene_to_file.call_deferred("res://scenes/game_over.tscn")
 
 func addScore(score) -> void:
 	var idx = Global.topScores.bsearch_custom(score, descending_bsearch, true)

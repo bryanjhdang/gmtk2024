@@ -1,25 +1,106 @@
-[gd_scene load_steps=11 format=3 uid="uid://bd1y1mjb4waxu"]
+[gd_scene load_steps=16 format=3 uid="uid://bd1y1mjb4waxu"]
 
-[ext_resource type="Texture2D" uid="uid://b35recxhtl2h8" path="res://scenes/jajcofa1.bmp" id="1_0ik3s"]
 [ext_resource type="Script" path="res://scenes/game_manager.gd" id="1_kft4r"]
 [ext_resource type="PackedScene" uid="uid://dobfx4bhn6edj" path="res://characters/player/player.tscn" id="1_oa5yd"]
-[ext_resource type="PackedScene" path="res://characters/fish/tadpole.tscn" id="2_e1r8k"]
+[ext_resource type="Texture2D" uid="uid://dvo4p5g8nf3qm" path="res://assets/27udgidl.bmp" id="1_p7l2u"]
+[ext_resource type="Texture2D" uid="uid://celwr1wtm2hbd" path="res://assets/9ciyyd8u.bmp" id="2_7daof"]
+[ext_resource type="PackedScene" uid="uid://b8pwuaur3v5sp" path="res://characters/fish/tadpole.tscn" id="2_e1r8k"]
 [ext_resource type="PackedScene" uid="uid://bnl61m2fo57p2" path="res://characters/fish/shark.tscn" id="4_iij5m"]
 [ext_resource type="PackedScene" path="res://scenes/spawn_manager.tscn" id="5_dfcjb"]
 [ext_resource type="PackedScene" uid="uid://clroduu7vi62r" path="res://scenes/hud.tscn" id="5_f2q30"]
-[ext_resource type="PackedScene" path="res://characters/fish/pufferfish.tscn" id="6_y8rkf"]
-[ext_resource type="PackedScene" path="res://characters/fish/anglerfish.tscn" id="7_mo1x5"]
-[ext_resource type="PackedScene" path="res://characters/fish/goldfish.tscn" id="9_jepab"]
+[ext_resource type="PackedScene" uid="uid://bc07fawgqeos" path="res://characters/fish/pufferfish.tscn" id="6_y8rkf"]
+[ext_resource type="PackedScene" uid="uid://chmm5auduoxu5" path="res://characters/fish/anglerfish.tscn" id="7_mo1x5"]
+[ext_resource type="Texture2D" uid="uid://bop01t4tpag7k" path="res://assets/6871c13a.bmp" id="7_rlc2x"]
+[ext_resource type="PackedScene" uid="uid://bec8430e58r3x" path="res://characters/fish/goldfish.tscn" id="9_jepab"]
+[ext_resource type="Texture2D" uid="uid://inadj3mb4ngy" path="res://assets/b8niwdq2.bmp" id="11_mf2wi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwel7"]
+size = Vector2(20, 12000)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hudwb"]
+size = Vector2(10000, 20)
 
 [node name="TestingPlayground" type="Node2D"]
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+
+[node name="Sea" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1000.0
+offset_top = -1000.0
+offset_right = 3000.0
+offset_bottom = 2000.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_0ik3s")
+texture = ExtResource("1_p7l2u")
+
+[node name="Sky" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_left = -1000.0
+offset_top = -2000.0
+offset_right = 3000.0
+offset_bottom = -1000.0
+texture = ExtResource("2_7daof")
+
+[node name="B8Niwdq2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(-931.5, -1129)
+texture = ExtResource("11_mf2wi")
+
+[node name="B8Niwdq3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(-376.5, -1129)
+texture = ExtResource("11_mf2wi")
+
+[node name="B8Niwdq4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(178.5, -1129)
+texture = ExtResource("11_mf2wi")
+
+[node name="B8Niwdq5" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(736.5, -1129)
+texture = ExtResource("11_mf2wi")
+
+[node name="B8Niwdq6" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(1293.5, -1129)
+texture = ExtResource("11_mf2wi")
+
+[node name="B8Niwdq7" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(1850.5, -1129)
+texture = ExtResource("11_mf2wi")
+
+[node name="B8Niwdq8" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(2406, -1129)
+texture = ExtResource("11_mf2wi")
+
+[node name="B8Niwdq9" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(2962, -1129)
+texture = ExtResource("11_mf2wi")
+
+[node name="6871c13a" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(998, 1800)
+texture = ExtResource("7_rlc2x")
+
+[node name="Border" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Border"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border/StaticBody2D"]
+position = Vector2(-5000, -500)
+shape = SubResource("RectangleShape2D_lwel7")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Border/StaticBody2D"]
+position = Vector2(0, -6500)
+shape = SubResource("RectangleShape2D_hudwb")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Border/StaticBody2D"]
+position = Vector2(0, 5000)
+shape = SubResource("RectangleShape2D_hudwb")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Border/StaticBody2D"]
+position = Vector2(5000, -500)
+shape = SubResource("RectangleShape2D_lwel7")
 
 [node name="Hud" parent="." instance=ExtResource("5_f2q30")]
 unique_name_in_owner = true
@@ -36,6 +117,10 @@ unique_name_in_owner = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 zoom = Vector2(0.5, 0.5)
+limit_left = -5000
+limit_top = -6900
+limit_right = 5000
+limit_bottom = 5000
 position_smoothing_speed = 10.0
 
 [node name="shark" parent="." instance=ExtResource("4_iij5m")]

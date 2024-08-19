@@ -138,10 +138,10 @@ func _frenzy() -> void:
 		cast_frenzy = false
 		hud._frenzyCooldown()
 		frenzy_enabled = true
-		$CollisionShape2D.disabled = true
+		game_manager.frenzy = true
 		await get_tree().create_timer(3.0).timeout
 		frenzy_enabled = false
-		$CollisionShape2D.disabled = false
+		game_manager.frenzy = false
 
 # DEBUG: kill yourself NOW.
 func _suicide() -> void:

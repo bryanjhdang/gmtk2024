@@ -11,14 +11,6 @@ var is_detected: bool = false
 var is_scared: bool = false # default: chases player. if true, fish runs away
 var fish_detected_speed: float
 
-func _on_body_entered(body):
-	if game_manager.score > value:
-		game_manager.add_point(value)
-		queue_free()
-	else:
-		game_manager.set_game_over()
-
-
 func _ready() -> void:
 	# Randomizes fish horizontal direction on spawn
 	_direction_randomizer()
@@ -33,7 +25,7 @@ func _ready() -> void:
 
 ## Fishy Engine
 func _process(delta: float) -> void:
-	if is_detected:
+	if is_detected and !game_manager.frenzy:
 		interact_with_player()
 	else:
 		var motion = Vector2(x, 0) * speed * (1 - abs(scale.x))
@@ -45,7 +37,9 @@ func _direction_randomizer() -> void:
 	x = (randi() & 2) - 1  # Direction: -1 == left, 1 == right
 	scale.x = (abs(scale.x) * x)
 
-func _on_fish_body_body_entered(body: Node2D) -> void:
+func _on_fish_body_entered(body: Node2D) -> void:
+	if game_manager.frenzy:
+		return
 	if game_manager.score > value:
 		game_manager.add_point(value)
 		queue_free()
