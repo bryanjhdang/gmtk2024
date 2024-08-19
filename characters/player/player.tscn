@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dobfx4bhn6edj"]
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_8td2n"]
-[ext_resource type="Texture2D" uid="uid://ky0604v4x2tu" path="res://assets/icon.svg" id="2_8u2nm"]
+[ext_resource type="Texture2D" uid="uid://bkfj8act1q80l" path="res://assets/main_cutout.png" id="2_tsvkc"]
 
 [sub_resource type="GDScript" id="GDScript_vehc7"]
 script/source = "extends Sprite2D
@@ -24,7 +24,8 @@ radius = 63.7887
 script = ExtResource("1_8td2n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_8u2nm")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_tsvkc")
 script = SubResource("GDScript_vehc7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

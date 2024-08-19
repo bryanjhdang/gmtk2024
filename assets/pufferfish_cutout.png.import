@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjfgj2epe1evb"
-path="res://.godot/imported/fish-enemy-base.png-3ee7895ea70c976b212bcfabb2240de4.ctex"
+uid="uid://8tfrbp5wx0s1"
+path="res://.godot/imported/pufferfish_cutout.png-4d8fd9f5676129a19bc51513a27aec79.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/fish-enemy-base.png"
-dest_files=["res://.godot/imported/fish-enemy-base.png-3ee7895ea70c976b212bcfabb2240de4.ctex"]
+source_file="res://assets/pufferfish_cutout.png"
+dest_files=["res://.godot/imported/pufferfish_cutout.png-4d8fd9f5676129a19bc51513a27aec79.ctex"]
 
 [params]
 
