@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://bd1y1mjb4waxu"]
+[gd_scene load_steps=10 format=3 uid="uid://bd1y1mjb4waxu"]
 
 [ext_resource type="Script" path="res://scenes/game_manager.gd" id="1_kft4r"]
 [ext_resource type="PackedScene" uid="uid://dobfx4bhn6edj" path="res://characters/player/player.tscn" id="1_oa5yd"]
+[ext_resource type="PackedScene" uid="uid://cstbqkds6d5hl" path="res://characters/fish/tadpole.tscn" id="2_e1r8k"]
 [ext_resource type="PackedScene" uid="uid://553m81mktncj" path="res://characters/fish/shark.tscn" id="4_iij5m"]
 [ext_resource type="PackedScene" path="res://scenes/spawn_manager.tscn" id="5_dfcjb"]
 [ext_resource type="PackedScene" uid="uid://clroduu7vi62r" path="res://scenes/hud.tscn" id="5_f2q30"]
+[ext_resource type="PackedScene" uid="uid://cw7h1v66q0iq0" path="res://characters/fish/pufferfish.tscn" id="6_y8rkf"]
+[ext_resource type="PackedScene" uid="uid://cybyxms6m0nrf" path="res://characters/fish/anglerfish.tscn" id="7_mo1x5"]
+[ext_resource type="PackedScene" uid="uid://coos4ewbgwvvi" path="res://characters/fish/goldfish.tscn" id="9_jepab"]
 
 [node name="TestingPlayground" type="Node2D"]
 
@@ -27,8 +31,20 @@ position_smoothing_enabled = true
 position_smoothing_speed = 10.0
 
 [node name="shark" parent="." instance=ExtResource("4_iij5m")]
-position = Vector2(564, 496)
+position = Vector2(1075, 769)
 
 [node name="SpawnManager" parent="." instance=ExtResource("5_dfcjb")]
+
+[node name="Pufferfish" parent="." instance=ExtResource("6_y8rkf")]
+position = Vector2(-412, 816)
+
+[node name="tadpole" parent="." instance=ExtResource("2_e1r8k")]
+position = Vector2(-683, 325)
+
+[node name="Anglerfish" parent="." instance=ExtResource("7_mo1x5")]
+position = Vector2(774, -459)
+
+[node name="Goldfish" parent="." instance=ExtResource("9_jepab")]
+position = Vector2(-607, -374)
 
 [connection signal="timeout" from="Timer" to="GameManager" method="_on_timer_timeout"]
