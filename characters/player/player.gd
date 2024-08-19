@@ -78,7 +78,10 @@ func _apply_acceleration(delta: float) -> void:
 	
 	# Check if the player is trying to move in the opposite direction
 	if velocity.dot(direction) < 0:
-		velocity -= velocity.normalized() * deceleration * delta
+		if frenzy_enabled:
+			velocity -= velocity.normalized() * deceleration * 10 * delta
+		else:
+			velocity -= velocity.normalized() * deceleration * delta
 
 	velocity += direction * acceleration * delta
 
@@ -132,16 +135,16 @@ func _chomp() -> void:
 	print("chomp")
 
 
-# If combo meter is full, it activates a temporary speed boost and invincibility 
+# If combo meter is full, it activates a temporary speed boost and invincibility from the fishes 
 func _frenzy() -> void:
 	if cast_frenzy:
 		cast_frenzy = false
 		hud._frenzyCooldown()
 		frenzy_enabled = true
-		game_manager.frenzy = true
+		set_collision_layer_value(1, false)
 		await get_tree().create_timer(3.0).timeout
 		frenzy_enabled = false
-		game_manager.frenzy = false
+		set_collision_layer_value(1, true)
 
 # DEBUG: kill yourself NOW.
 func _suicide() -> void:

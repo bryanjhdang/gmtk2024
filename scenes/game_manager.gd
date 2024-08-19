@@ -3,7 +3,6 @@ extends Node
 @onready var hud = %Hud
 
 var score: float
-var frenzy: bool = false
 
 func _ready() -> void:
 	score = 100

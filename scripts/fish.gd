@@ -8,8 +8,8 @@ extends Node2D
 var speed: float = 150
 var x: float
 var is_detected: bool = false
-var is_scared: bool = false # default: chases player. if true, fish runs away
-var fish_detected_speed: float
+@export var is_scared: bool # false: chases player | true: fish runs away
+@export var fish_detected_speed: float
 
 func _ready() -> void:
 	# Randomizes fish horizontal direction on spawn
@@ -25,7 +25,7 @@ func _ready() -> void:
 
 ## Fishy Engine
 func _process(delta: float) -> void:
-	if is_detected and !game_manager.frenzy:
+	if is_detected:
 		interact_with_player()
 	else:
 		var motion = Vector2(x, 0) * speed * (1 - abs(scale.x))
@@ -38,8 +38,6 @@ func _direction_randomizer() -> void:
 	scale.x = (abs(scale.x) * x)
 
 func _on_fish_body_entered(body: Node2D) -> void:
-	if game_manager.frenzy:
-		return
 	if game_manager.score > value:
 		game_manager.add_point(value)
 		queue_free()
