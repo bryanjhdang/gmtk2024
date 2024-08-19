@@ -21,9 +21,15 @@ func _on_body_entered(body):
 
 func _ready() -> void:
 	# Randomizes fish horizontal direction on spawn
-	x = (randi() & 2) - 1  # Direction: -1 == left, 1 == right
-	scale.x *= x
-
+	_direction_randomizer()
+	
+	# Set up the timer for periodic direction changes
+	var direction_timer = Timer.new()
+	direction_timer.wait_time = randi_range(3,8)
+	direction_timer.autostart = true
+	direction_timer.one_shot = false
+	add_child(direction_timer)
+	direction_timer.connect("timeout", Callable(self, "_direction_randomizer"))
 
 ## Fishy Engine
 func _process(delta: float) -> void:
@@ -34,6 +40,10 @@ func _process(delta: float) -> void:
 		position += motion * delta
 		
 		
+func _direction_randomizer() -> void:
+	# Randomizes fish horizontal direction
+	x = (randi() & 2) - 1  # Direction: -1 == left, 1 == right
+	scale.x = (abs(scale.x) * x)
 
 func _on_fish_body_body_entered(body: Node2D) -> void:
 	if game_manager.score > value:
@@ -54,6 +64,7 @@ func _on_detection_range_body_exited(body: Node2D) -> void:
 	print('phew im safe!!')
 	
 	
+
 func interact_with_player():
 	var direction: Vector2
 	fish_detected_speed = (2 - abs(scale.x))
