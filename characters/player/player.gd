@@ -31,6 +31,8 @@ func _process(delta: float) -> void:
 	# change the player size based on score
 	scale = Vector2((game_manager.score + 900) / 1000, (game_manager.score + 900) / 1000)
 	
+	_rotate_player()
+	
 	if not is_dashing:
 		if Input.is_action_pressed("move"):
 			_apply_acceleration(delta)
@@ -57,6 +59,18 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("chomp"):
 		_chomp()
 
+
+func _rotate_player() -> void:
+	var mouse_position = get_global_mouse_position()
+	var direction = mouse_position - global_position
+
+	# Flip the sprite based on the horizontal direction
+	if direction.x < 0:  # Mouse is to the left
+		self.scale = Vector2(-1,1)
+		rotation = direction.angle() + PI
+	else:  # Mouse is to the right
+		self.scale = Vector2(1,1)
+		rotation = direction.angle()
 
 func _apply_dash_movement(delta: float) -> void:
 	pass
