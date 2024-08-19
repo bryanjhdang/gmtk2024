@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cw7h1v66q0iq0"]
+[gd_scene load_steps=5 format=3 uid="uid://bc07fawgqeos"]
 
 [ext_resource type="Texture2D" uid="uid://8tfrbp5wx0s1" path="res://assets/pufferfish_cutout.png" id="1_vvk22"]
 [ext_resource type="Script" path="res://characters/fish/pufferfish.gd" id="2_brr73"]
@@ -30,6 +30,6 @@ shape = SubResource("CapsuleShape2D_6rmjw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detectionRange"]
 shape = SubResource("CircleShape2D_3r7vv")
 
-[connection signal="body_entered" from="fishBody" to="." method="_on_fish_body_body_entered"]
+[connection signal="body_entered" from="fishBody" to="." method="_on_fish_body_entered"]
 [connection signal="body_entered" from="detectionRange" to="." method="_on_detection_range_body_entered"]
 [connection signal="body_exited" from="detectionRange" to="." method="_on_detection_range_body_exited"]
