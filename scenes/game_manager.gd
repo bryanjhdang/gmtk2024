@@ -3,7 +3,7 @@ extends Node
 @onready var hud = %Hud
 
 var score: float
-var enemy = preload("res://characters/enemy/enemy_base.tscn")
+#var enemy = preload("res://characters/enemy/enemy_base.tscn")
 
 func _ready() -> void:
 	score = 100
