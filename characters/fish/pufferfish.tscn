@@ -15,7 +15,6 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_vvk22")
 script = ExtResource("2_jj3yb")
 value = 100.0
-
 fish_detected_speed = 3.0
 
 [node name="fishBody" type="Area2D" parent="."]
