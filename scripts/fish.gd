@@ -50,11 +50,11 @@ func _on_fish_body_entered(body: Node2D) -> void:
 func _on_detection_range_body_entered(body: Node2D) -> void:
 	#if game_manager.score < value:
 	is_detected = true
-	print('im gonna getcha!')
+	#print('im gonna getcha!')
 
 func _on_detection_range_body_exited(body: Node2D) -> void:
 	is_detected = false
-	print('phew im safe!!')
+	#print('phew im safe!!')
 	
 func interact_with_player():
 	var direction: Vector2

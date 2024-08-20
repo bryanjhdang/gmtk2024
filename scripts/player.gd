@@ -134,23 +134,29 @@ func _end_dash() -> void:
 
 # The player bites on an enemy giving bonus combos
 func _chomp() -> void:
-	print("chomp")
+	#print("chomp")
+	pass
 
 
 # If combo meter is full, it activates a temporary speed boost and invincibility from the fishes 
 func _frenzy() -> void:
 	if cast_frenzy:
+		print("activate frenzy")
 		cast_frenzy = false
-		hud._frenzyCooldown()
 		frenzy_enabled = true
 		set_collision_layer_value(1, false)
-		await get_tree().create_timer(3.0).timeout
-		frenzy_enabled = false
-		set_collision_layer_value(1, true)
+		var frenzy_timer: SceneTreeTimer = get_tree().create_timer(3.0)
+		frenzy_timer.timeout.connect(_end_frenzy)
+
+func _end_frenzy() -> void:
+	frenzy_enabled = false
+	hud._frenzyCooldown()
+	set_collision_layer_value(1, true)
+	print("frenzy ended")
 
 # DEBUG: kill yourself NOW.
 func _suicide() -> void:
-	print("dying")
+	#print("dying")
 	_die()
 
 
@@ -165,7 +171,7 @@ func get_hurt(damage: int) -> void:
 
 func _damaged() -> void:
 	# knockback, temp invincibility
-	print("got hit")
+	#print("got hit")
 	game_manager.set_game_over()
 
 
@@ -173,4 +179,4 @@ func _die() -> void:
 	# play death animation, call end game
 	
 	game_manager.set_game_over()
-	print("died")
+	#print("died")

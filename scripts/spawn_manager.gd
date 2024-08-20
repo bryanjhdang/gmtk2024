@@ -100,11 +100,11 @@ func _on_spawn_timer_timeout() -> void:
 	
 	current_fish_count += 1
 	spawn_timer.wait_time = randi_range(1, 3)
-	print(spawn_timer.wait_time)
+	#print(spawn_timer.wait_time)
 
-	print("Spawned fish at position: ", fish_instance.position)
+	#print("Spawned fish at position: ", fish_instance.position)
 
-	print(fish_instance.value)
+	#print(fish_instance.value)
 	
 func _choose_fish_to_spawn() -> Fish:
 	#var cum_prob = 0.0

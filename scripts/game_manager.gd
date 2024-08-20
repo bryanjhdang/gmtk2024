@@ -16,7 +16,7 @@ func _ready() -> void:
 func add_point(amount: float) -> void:
 	score += amount
 	update_score_label()
-	print(score)
+	#print(score)
 
 func update_score_label() -> void:
 	if hud:
@@ -25,13 +25,13 @@ func update_score_label() -> void:
 func set_winner() -> void:
 	self.addScore(score)
 	Global.latestScore = score
-	print("latest score: %d" % score)
+	#print("latest score: %d" % score)
 	get_tree().change_scene_to_file.call_deferred("res://scenes/winner.tscn")
 
 func set_game_over() -> void:
 	self.addScore(score)
 	Global.latestScore = score
-	print("latest score: %d" % score)
+	#print("latest score: %d" % score)
 	get_tree().change_scene_to_file.call_deferred("res://scenes/game_over.tscn")
 
 func addScore(score) -> void:
@@ -44,7 +44,7 @@ func addScore(score) -> void:
 	Global.save_data.high_score_4 = Global.topScores[3]
 	Global.save_data.high_score_5 = Global.topScores[4]
 	Global.save_data.save()
-	print(Global.topScores)
+	#print(Global.topScores)
 
 func descending_bsearch(a, b) -> bool: 
 	if a >= b:

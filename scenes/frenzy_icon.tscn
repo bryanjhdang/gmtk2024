@@ -7,8 +7,10 @@
 script = ExtResource("1_0lhda")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
-offset_right = 400.0
-offset_bottom = 400.0
+offset_left = 0.999998
+offset_top = 0.999999
+offset_right = 684.0
+offset_bottom = 605.0
 scale = Vector2(0.1, 0.1)
 texture_under = ExtResource("2_51cmq")
 texture_progress = ExtResource("2_51cmq")
