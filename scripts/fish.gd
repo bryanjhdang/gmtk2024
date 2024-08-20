@@ -4,7 +4,7 @@ class_name Fish
 @onready var game_manager: Node = %GameManager
 @onready var player = %Player
 @export var value: float
-
+#@export var projectile: PackedScene
 
 var speed: float = 150
 var x: float
@@ -30,8 +30,7 @@ func _process(delta: float) -> void:
 		interact_with_player()
 	else:
 		var motion = Vector2(x, 0) * speed * (1 - abs(scale.x))
-		position += motion * delta
-		
+		position += motion * delta		
 		
 func _direction_randomizer() -> void:
 	# Randomizes fish horizontal direction
@@ -45,8 +44,6 @@ func _on_fish_body_entered(body: Node2D) -> void:
 	else:
 		game_manager.set_game_over()
 
-
-
 func _on_detection_range_body_entered(body: Node2D) -> void:
 	#if game_manager.score < value:
 	is_detected = true
@@ -56,8 +53,9 @@ func _on_detection_range_body_exited(body: Node2D) -> void:
 	is_detected = false
 	print('phew im safe!!')
 	
-	
-
+# TODO: 
+#  1. if player in detection range, grab location of the player and shoot at them
+#  2. add a timer cool down?
 func interact_with_player():
 	var direction: Vector2
 	#fish_detected_speed = (2 - abs(scale.x))
@@ -65,6 +63,12 @@ func interact_with_player():
 		direction = (position - player.position).normalized()
 	else:
 		direction = (player.position - position).normalized()
+	
+	
+	
+	# the fish is a shooting type
+	#if projectile != null:
+		#_shoot()
 	
 	# Changes direction of fish
 	x = sign(direction.x)
@@ -76,3 +80,6 @@ func interact_with_player():
 	# Runs from the player
 	position += direction * speed * get_process_delta_time() * fish_detected_speed	
 	
+# @override 
+func _shoot():
+	pass

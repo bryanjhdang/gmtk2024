@@ -42,8 +42,6 @@ func _on_spawn_timer_timeout() -> void:
 	var y = randf_range(50, 550)
 	fish_instance.position = Vector2(x, y)
 	
-
-	
 	# Add the fish to the scene
 	get_parent().add_child(fish_instance)
 	fish_instance.player = %Player

@@ -1,4 +1,3 @@
-class_name Projectile
 extends Area2D
 
 @export var speed: int = 500
