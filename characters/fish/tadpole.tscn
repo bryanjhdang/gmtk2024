@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://ykua2jmtndt7"]
+[gd_scene load_steps=5 format=3 uid="uid://b8pwuaur3v5sp"]
 
-[ext_resource type="Texture2D" path="res://assets/tadpole_cutout.png" id="1_tb1rv"]
+[ext_resource type="Texture2D" uid="uid://cjjoodyxyslee" path="res://assets/tadpole_cutout.png" id="1_tb1rv"]
 [ext_resource type="Script" path="res://scripts/fish.gd" id="2_rlng1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6rmjw"]

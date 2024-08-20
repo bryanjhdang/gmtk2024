@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://chmm5auduoxu5"]
+
+[ext_resource type="Texture2D" uid="uid://b8vt58rhlcqoi" path="res://assets/anglerfish_cutout.png" id="1_rh6lt"]
+[ext_resource type="Script" path="res://scripts/anglerfish.gd" id="2_tch0g"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6rmjw"]
+radius = 518.666
+height = 1674.67
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3r7vv"]
+radius = 1949.64
+
+[node name="Anglerfish" type="Sprite2D"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_rh6lt")
+script = ExtResource("2_tch0g")
+value = 50.0
+fish_detected_speed = 2.0
+
+[node name="fishBody" type="Area2D" parent="."]
+scale = Vector2(0.15, 0.15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fishBody"]
+position = Vector2(-44.4444, -44.4444)
+rotation = 1.5708
+scale = Vector2(6.66667, 6.66667)
+shape = SubResource("CapsuleShape2D_6rmjw")
+
+[node name="detectionRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detectionRange"]
+shape = SubResource("CircleShape2D_3r7vv")
+
+[connection signal="body_entered" from="fishBody" to="." method="_on_fish_body_entered"]
+[connection signal="body_entered" from="detectionRange" to="." method="_on_detection_range_body_entered"]
+[connection signal="body_exited" from="detectionRange" to="." method="_on_detection_range_body_exited"]

@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnl61m2fo57p2"]
+
+[ext_resource type="Texture2D" uid="uid://07p4hdqlcu0q" path="res://assets/shark_cutout.png" id="1_wj2nx"]
+[ext_resource type="Script" path="res://scripts/shark.gd" id="2_uc77r"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6rmjw"]
+radius = 370.0
+height = 2833.33
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3r7vv"]
+radius = 2756.84
+
+[node name="shark" type="Sprite2D"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_wj2nx")
+script = ExtResource("2_uc77r")
+value = 500.0
+fish_detected_speed = 3.0
+
+[node name="fishBody" type="Area2D" parent="."]
+scale = Vector2(0.15, 0.15)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fishBody"]
+position = Vector2(-44.4444, -44.4444)
+rotation = 1.5708
+scale = Vector2(6.66667, 6.66667)
+shape = SubResource("CapsuleShape2D_6rmjw")
+
+[node name="detectionRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detectionRange"]
+shape = SubResource("CircleShape2D_3r7vv")
+
+[connection signal="body_entered" from="fishBody" to="." method="_on_fish_body_entered"]
+[connection signal="body_entered" from="detectionRange" to="." method="_on_detection_range_body_entered"]
+[connection signal="body_exited" from="detectionRange" to="." method="_on_detection_range_body_exited"]

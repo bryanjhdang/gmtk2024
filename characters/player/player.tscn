@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dobfx4bhn6edj"]
 
-[ext_resource type="Script" path="res://characters/player/player.gd" id="1_8td2n"]
-[ext_resource type="Texture2D" uid="uid://ky0604v4x2tu" path="res://assets/icon.svg" id="2_8u2nm"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_8td2n"]
+[ext_resource type="Texture2D" uid="uid://bkfj8act1q80l" path="res://assets/main_cutout.png" id="2_s6wvc"]
 
 [sub_resource type="GDScript" id="GDScript_vehc7"]
 script/source = "extends Sprite2D
@@ -17,15 +17,18 @@ func _process(delta: float) -> void:
 	pass
 "
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_rm8vj"]
-radius = 63.7887
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t2y4k"]
+radius = 60.0
+height = 222.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_8td2n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_8u2nm")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_s6wvc")
 script = SubResource("GDScript_vehc7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_rm8vj")
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_t2y4k")
