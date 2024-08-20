@@ -149,6 +149,7 @@ func _frenzy() -> void:
 	if cast_frenzy:
 		SfxPlayer.play_frenzy()
 		frenzy_visual.show()
+		modulate.a = 0.5
 		#print("activate frenzy")
 		cast_frenzy = false
 		frenzy_enabled = true
@@ -159,6 +160,7 @@ func _frenzy() -> void:
 func _end_frenzy() -> void:
 	frenzy_enabled = false
 	hud._frenzyCooldown()
+	modulate.a = 1
 	frenzy_visual.hide()
 	set_collision_layer_value(1, true)
 	#print("frenzy ended")
