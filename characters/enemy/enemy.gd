@@ -24,7 +24,7 @@ func _process(delta):
 	# TODO: 
 	#  1. if player in detection range,
 	#	  grab location of the player and shoot at them
-	#  2. add a timer cool down     
+	#  2. add a timer cool down?
 	if randi_range(0, 1):
 		shoot()
 

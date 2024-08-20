@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqckc5ch8fb4l"]
+
+[ext_resource type="Script" path="res://projectiles/projectile.gd" id="1_vrv5a"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_2ddoa"]
+
+[node name="bullet_2" type="Area2D"]
+rotation = 1.5708
+collision_layer = 0
+monitorable = false
+script = ExtResource("1_vrv5a")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-8.54981e-08, 0.0236183)
+rotation = 1.5708
+scale = Vector2(0.896647, 1)
+polygon = PackedVector2Array(2.99996, -5.00002, -3.00004, -4.99998, 2.89599e-05, 4)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+self_modulate = Color(0.52081, 0.00329291, 0.888325, 1)
+position = Vector2(0.362225, 0.0314992)
+rotation = 1.5708
+scale = Vector2(5.42189, 9.38511)
+mesh = SubResource("PrismMesh_2ddoa")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
