@@ -1,6 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://clroduu7vi62r"]
+[gd_scene load_steps=3 format=3 uid="uid://clroduu7vi62r"]
 
-[ext_resource type="Script" path="res://scripts/timer_label.gd" id="1_fr2vy"]
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_wgdbc"]
 [ext_resource type="PackedScene" uid="uid://bxxipetcqhoje" path="res://scenes/frenzy_icon.tscn" id="3_hfyng"]
 
@@ -19,7 +18,6 @@ text = "00"
 horizontal_alignment = 2
 vertical_alignment = 1
 text_direction = 2
-script = ExtResource("1_fr2vy")
 
 [node name="scoreLabel" type="Label" parent="."]
 unique_name_in_owner = true
