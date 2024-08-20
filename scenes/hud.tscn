@@ -13,10 +13,10 @@
 script = ExtResource("1_wgdbc")
 
 [node name="timerLabel" type="Label" parent="."]
-offset_left = 1029.0
-offset_top = -32.0
-offset_right = 1139.0
-offset_bottom = 92.0
+offset_left = 1009.0
+offset_top = -16.0
+offset_right = 1119.0
+offset_bottom = 108.0
 size_flags_horizontal = 8
 size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("2_afe6v")
@@ -29,9 +29,9 @@ text_direction = 2
 [node name="canEatLabel" type="Label" parent="."]
 unique_name_in_owner = true
 offset_left = 42.0
-offset_top = 69.0
-offset_right = 157.0
-offset_bottom = 114.0
+offset_top = 86.0
+offset_right = 163.0
+offset_bottom = 131.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("2_afe6v")
@@ -40,9 +40,9 @@ text = "CAN EAT"
 
 [node name="scoreLabel" type="Label" parent="."]
 offset_left = 40.0
-offset_top = 2.0
-offset_right = 154.0
-offset_bottom = 59.0
+offset_top = 21.0
+offset_right = 161.0
+offset_bottom = 78.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("2_afe6v")
@@ -56,9 +56,9 @@ position = Vector2(16, 552)
 wait_time = 10.0
 
 [node name="Label" type="Label" parent="FrenzyIcon"]
-offset_left = 34.0
+offset_left = 39.0
 offset_top = -30.0
-offset_right = 74.0
+offset_right = 79.0
 offset_bottom = 2.0
 theme_override_fonts/font = ExtResource("2_afe6v")
 theme_override_font_sizes/font_size = 24
@@ -80,22 +80,22 @@ theme_override_font_sizes/font_size = 24
 text = "RMB"
 
 [node name="Fish1" type="Sprite2D" parent="."]
-position = Vector2(94, 127)
+position = Vector2(98.66, 145.7)
 scale = Vector2(0.04, 0.04)
 texture = ExtResource("5_nr0dw")
 
 [node name="Fish2" type="Sprite2D" parent="."]
-position = Vector2(95, 155)
+position = Vector2(99.66, 173.7)
 scale = Vector2(0.04, 0.04)
 texture = ExtResource("7_ey7gs")
 
 [node name="Fish3" type="Sprite2D" parent="."]
-position = Vector2(95, 196)
+position = Vector2(99.66, 214.7)
 scale = Vector2(0.04, 0.04)
 texture = ExtResource("7_2whka")
 
 [node name="Fish4" type="Sprite2D" parent="."]
-position = Vector2(100, 248)
+position = Vector2(104.66, 266.7)
 scale = Vector2(0.04, 0.04)
 texture = ExtResource("6_vfl3p")
 
