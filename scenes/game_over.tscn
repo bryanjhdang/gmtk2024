@@ -89,6 +89,7 @@ scale = Vector2(0.159459, 0.159459)
 position = Vector2(491, 274)
 scale = Vector2(0.12771, 0.117832)
 flip_h = true
+value = 50.0
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

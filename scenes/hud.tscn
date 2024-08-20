@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_wgdbc"]
 [ext_resource type="FontFile" uid="uid://tt4u3fqh87lr" path="res://fonts/PixelatedLove/PixelatedLove/pixelated-loveNew.ttf" id="2_afe6v"]
-[ext_resource type="PackedScene" path="res://scenes/dash_icon.tscn" id="3_fdjad"]
+[ext_resource type="PackedScene" uid="uid://c8liqkj7jrh2j" path="res://scenes/dash_icon.tscn" id="3_fdjad"]
 [ext_resource type="PackedScene" uid="uid://bxxipetcqhoje" path="res://scenes/frenzy_icon.tscn" id="3_hfyng"]
 [ext_resource type="Texture2D" uid="uid://cjjoodyxyslee" path="res://assets/tadpole_cutout.png" id="5_nr0dw"]
 [ext_resource type="Texture2D" uid="uid://b8vt58rhlcqoi" path="res://assets/anglerfish_cutout.png" id="6_vfl3p"]
@@ -57,9 +57,9 @@ wait_time = 10.0
 
 [node name="Label" type="Label" parent="FrenzyIcon"]
 offset_left = 34.0
-offset_top = -36.0
+offset_top = -30.0
 offset_right = 74.0
-offset_bottom = -4.0
+offset_bottom = 2.0
 theme_override_fonts/font = ExtResource("2_afe6v")
 theme_override_font_sizes/font_size = 24
 text = "E"
@@ -71,10 +71,10 @@ position = Vector2(106, 552)
 wait_time = 2.0
 
 [node name="Label" type="Label" parent="DashIcon"]
-offset_left = 21.0
-offset_top = -36.0
-offset_right = 62.0
-offset_bottom = -4.0
+offset_left = 33.0
+offset_top = -28.0
+offset_right = 74.0
+offset_bottom = 4.0
 theme_override_fonts/font = ExtResource("2_afe6v")
 theme_override_font_sizes/font_size = 24
 text = "RMB"
