@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://bd1y1mjb4waxu"]
+[gd_scene load_steps=16 format=3 uid="uid://bd1y1mjb4waxu"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_kft4r"]
 [ext_resource type="PackedScene" uid="uid://dobfx4bhn6edj" path="res://characters/player/player.tscn" id="1_oa5yd"]
 [ext_resource type="Texture2D" uid="uid://dvo4p5g8nf3qm" path="res://assets/27udgidl.bmp" id="1_p7l2u"]
 [ext_resource type="Texture2D" uid="uid://celwr1wtm2hbd" path="res://assets/9ciyyd8u.bmp" id="2_7daof"]
 [ext_resource type="PackedScene" uid="uid://b8pwuaur3v5sp" path="res://characters/fish/tadpole.tscn" id="2_e1r8k"]
+[ext_resource type="PackedScene" uid="uid://bnl61m2fo57p2" path="res://characters/fish/shark.tscn" id="4_iij5m"]
 [ext_resource type="PackedScene" uid="uid://b11g7kju2d1x4" path="res://scenes/spawn_manager.tscn" id="5_dfcjb"]
 [ext_resource type="PackedScene" uid="uid://clroduu7vi62r" path="res://scenes/hud.tscn" id="5_f2q30"]
 [ext_resource type="PackedScene" uid="uid://bc07fawgqeos" path="res://characters/fish/pufferfish.tscn" id="6_y8rkf"]
@@ -122,6 +123,9 @@ limit_right = 5000
 limit_bottom = 5000
 position_smoothing_speed = 10.0
 
+[node name="shark" parent="." instance=ExtResource("4_iij5m")]
+position = Vector2(1075, 769)
+
 [node name="Pufferfish" parent="." instance=ExtResource("6_y8rkf")]
 position = Vector2(-412, 816)
 
@@ -130,6 +134,7 @@ position = Vector2(-683, 325)
 
 [node name="Anglerfish" parent="." instance=ExtResource("7_mo1x5")]
 position = Vector2(774, -459)
+is_scared = null
 
 [node name="Goldfish" parent="." instance=ExtResource("9_jepab")]
 position = Vector2(-607, -374)
