@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://mecby3dl0n8r"]
+[gd_scene load_steps=6 format=3 uid="uid://mecby3dl0n8r"]
 
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="1_mtux7"]
 [ext_resource type="FontFile" uid="uid://tt4u3fqh87lr" path="res://fonts/PixelatedLove/PixelatedLove/pixelated-loveNew.ttf" id="2_l6m0v"]
 [ext_resource type="Texture2D" uid="uid://dvo4p5g8nf3qm" path="res://assets/27udgidl.bmp" id="2_xrb5u"]
+[ext_resource type="PackedScene" uid="uid://bnl61m2fo57p2" path="res://characters/fish/shark.tscn" id="4_3v34v"]
+[ext_resource type="PackedScene" uid="uid://chmm5auduoxu5" path="res://characters/fish/anglerfish.tscn" id="5_p11uy"]
 
 [node name="GameOverScreen" type="CanvasLayer"]
 script = ExtResource("1_mtux7")
@@ -77,6 +79,16 @@ offset_bottom = 141.0
 theme_override_fonts/font = ExtResource("2_l6m0v")
 theme_override_font_sizes/font_size = 32
 text = "NO"
+
+[node name="shark" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/CenterContainer/MarginContainer/playAgainTitle" instance=ExtResource("4_3v34v")]
+position = Vector2(-318, -127)
+rotation = 0.47822
+scale = Vector2(0.159459, 0.159459)
+
+[node name="Anglerfish" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/CenterContainer/MarginContainer/playAgainTitle" instance=ExtResource("5_p11uy")]
+position = Vector2(491, 274)
+scale = Vector2(0.12771, 0.117832)
+flip_h = true
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
