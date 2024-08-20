@@ -10,9 +10,11 @@ monitorable = false
 script = ExtResource("1_dyihw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
 texture = ExtResource("2_siald")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+rotation = 1.5708
 polygon = PackedVector2Array(-66.9994, 163, 62.0006, 164, -2.00051, -142)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

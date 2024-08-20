@@ -1,8 +1,9 @@
 extends Area2D
 
 @export var speed: int = 1000
-@export var max_range: float = 20000
+@export var max_range: float = 2000000000
 var distance_traveled: float = 0.0
+
 
 func _physics_process(delta: float) -> void:
 	var distance: float = speed * delta
@@ -16,3 +17,4 @@ func _physics_process(delta: float) -> void:
 
 func _on_body_entered(body) -> void:
 	body._damaged()
+	queue_free()

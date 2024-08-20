@@ -32,17 +32,18 @@ shape = SubResource("CapsuleShape2D_6rmjw")
 shape = SubResource("CircleShape2D_3r7vv")
 
 [node name="puffer-emitter-1" type="Marker2D" parent="."]
-position = Vector2(610, 875)
+position = Vector2(-635, -700)
 
 [node name="puffer-emitter-2" type="Marker2D" parent="."]
-position = Vector2(530, -690)
+position = Vector2(710, -640)
 
 [node name="puffer-emitter-3" type="Marker2D" parent="."]
-position = Vector2(-505, -665)
+position = Vector2(-625, 835)
+scale = Vector2(1, 1)
 
 [node name="puffer-emitter-4" type="Marker2D" parent="."]
-position = Vector2(-365, 890)
-scale = Vector2(0.999999, 0.999999)
+position = Vector2(680, 920)
+scale = Vector2(1, 1)
 
 [connection signal="body_entered" from="fishBody" to="." method="_on_fish_body_entered"]
 [connection signal="body_entered" from="detectionRange" to="." method="_on_detection_range_body_entered"]
