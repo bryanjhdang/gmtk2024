@@ -4,6 +4,7 @@ extends Node2D
 @onready var frenzy_sfx = $FrenzySfx
 @onready var dash_sfx = $DashSfx
 @onready var unlock_sfx = $UnlockFish
+@onready var start_sfx = $StartSfx
 
 func play_eat():
 	eat_sfx.play()
@@ -16,3 +17,6 @@ func play_dash():
 
 func play_unlock():
 	unlock_sfx.play()
+
+func play_start():
+	start_sfx.play()

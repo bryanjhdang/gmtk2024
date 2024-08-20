@@ -7,4 +7,5 @@ func _ready() -> void:
 
 
 func _on_pressed() -> void:
+	SfxPlayer.play_start()
 	get_tree().change_scene_to_file("res://scenes/sandbox.tscn")
