@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b11g7kju2d1x4"]
+
+[ext_resource type="Script" path="res://scripts/spawn_manager.gd" id="1_vpo42"]
+
+[node name="SpawnManager" type="Node2D"]
+script = ExtResource("1_vpo42")
+max_fish_count = null
+spawn_interval = null

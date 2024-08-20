@@ -31,18 +31,18 @@ motion_scale = Vector2(0.2, 0.2)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1635.0
+offset_left = -1000.0
 offset_top = -1000.0
-offset_right = 3653.0
+offset_right = 3000.0
 offset_bottom = 2000.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_p7l2u")
 
 [node name="Sky" type="TextureRect" parent="ParallaxBackground/ParallaxLayer"]
-offset_left = -1661.0
+offset_left = -1000.0
 offset_top = -2000.0
-offset_right = 3669.0
+offset_right = 3000.0
 offset_bottom = -1000.0
 texture = ExtResource("2_7daof")
 
@@ -79,17 +79,8 @@ position = Vector2(2962, -1129)
 texture = ExtResource("11_mf2wi")
 
 [node name="6871c13a" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(1010.5, 1800)
-scale = Vector2(1.31354, 1)
+position = Vector2(998, 1800)
 texture = ExtResource("7_rlc2x")
-
-[node name="B8Niwdq10" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(3335, -1140)
-texture = ExtResource("11_mf2wi")
-
-[node name="B8Niwdq11" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(-1288, -1124)
-texture = ExtResource("11_mf2wi")
 
 [node name="Border" type="Node" parent="."]
 
@@ -123,10 +114,9 @@ autostart = true
 
 [node name="Player" parent="." instance=ExtResource("1_oa5yd")]
 unique_name_in_owner = true
-position = Vector2(1497, -82)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(0.4, 0.4)
+zoom = Vector2(0.5, 0.5)
 limit_left = -5000
 limit_top = -6900
 limit_right = 5000
@@ -135,8 +125,6 @@ position_smoothing_speed = 10.0
 
 [node name="shark" parent="." instance=ExtResource("4_iij5m")]
 position = Vector2(1075, 769)
-
-[node name="SpawnManager" parent="." instance=ExtResource("5_dfcjb")]
 
 [node name="Pufferfish" parent="." instance=ExtResource("6_y8rkf")]
 position = Vector2(-412, 816)
@@ -149,5 +137,7 @@ position = Vector2(774, -459)
 
 [node name="Goldfish" parent="." instance=ExtResource("9_jepab")]
 position = Vector2(-607, -374)
+
+[node name="SpawnManager" parent="." instance=ExtResource("5_dfcjb")]
 
 [connection signal="timeout" from="Timer" to="GameManager" method="_on_timer_timeout"]

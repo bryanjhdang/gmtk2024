@@ -1,4 +1,5 @@
 extends Node2D
+class_name Fish
 
 @onready var game_manager: Node = %GameManager
 @onready var player = %Player
@@ -59,7 +60,7 @@ func _on_detection_range_body_exited(body: Node2D) -> void:
 
 func interact_with_player():
 	var direction: Vector2
-	fish_detected_speed = (2 - abs(scale.x))
+	#fish_detected_speed = (2 - abs(scale.x))
 	if is_scared:
 		direction = (position - player.position).normalized()
 	else:
