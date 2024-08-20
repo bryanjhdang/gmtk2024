@@ -1,0 +1,104 @@
+[gd_scene load_steps=6 format=3 uid="uid://7jj4obbhgdsm"]
+
+[ext_resource type="Script" path="res://scripts/game_over.gd" id="1_fnglx"]
+[ext_resource type="Texture2D" uid="uid://dvo4p5g8nf3qm" path="res://assets/27udgidl.bmp" id="2_8yehu"]
+[ext_resource type="FontFile" uid="uid://tt4u3fqh87lr" path="res://fonts/PixelatedLove/PixelatedLove/pixelated-loveNew.ttf" id="3_uxc8p"]
+[ext_resource type="Texture2D" uid="uid://8tfrbp5wx0s1" path="res://assets/pufferfish_cutout.png" id="4_gypat"]
+[ext_resource type="Texture2D" uid="uid://bkfj8act1q80l" path="res://assets/main_cutout.png" id="5_djssf"]
+
+[node name="WinnerScreen" type="CanvasLayer"]
+script = ExtResource("1_fnglx")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Sea" type="TextureRect" parent="PanelContainer"]
+layout_mode = 2
+texture = ExtResource("2_8yehu")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 95
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="gameOverTitle" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_uxc8p")
+theme_override_font_sizes/font_size = 64
+text = "WINNER? I BARELY KNOW HER!"
+horizontal_alignment = 1
+
+[node name="scoreLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_uxc8p")
+theme_override_font_sizes/font_size = 24
+text = "SCORE: 00000000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 75
+
+[node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="playAgainTitle" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/CenterContainer/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_uxc8p")
+theme_override_font_sizes/font_size = 48
+text = "PLAY AGAIN?"
+horizontal_alignment = 1
+
+[node name="yes" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/CenterContainer/MarginContainer/playAgainTitle"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 90.0
+offset_right = 104.0
+offset_bottom = 141.0
+theme_override_fonts/font = ExtResource("3_uxc8p")
+theme_override_font_sizes/font_size = 32
+text = "YES"
+
+[node name="no" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/CenterContainer/MarginContainer/playAgainTitle"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 90.0
+offset_right = 256.0
+offset_bottom = 141.0
+theme_override_fonts/font = ExtResource("3_uxc8p")
+theme_override_font_sizes/font_size = 32
+text = "NO"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1028, 241)
+rotation = 3.07684
+scale = Vector2(0.12611, 0.0927596)
+skew = -0.0574759
+texture = ExtResource("4_gypat")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(198, 396)
+scale = Vector2(0.226626, 0.164653)
+texture = ExtResource("4_gypat")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(755, 518)
+rotation = 3.05607
+scale = Vector2(-0.172538, -0.120371)
+texture = ExtResource("5_djssf")
+
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/CenterContainer/MarginContainer/playAgainTitle/yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/CenterContainer/MarginContainer/playAgainTitle/no" to="." method="_on_no_pressed"]
