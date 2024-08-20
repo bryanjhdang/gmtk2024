@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready():
+	AudioPlayer.play_music_level()
 	$highscores1.text = str(int(Global.topScores[0]))
 	$highscores2.text = str(int(Global.topScores[1]))
 	$highscores3.text = str(int(Global.topScores[2]))

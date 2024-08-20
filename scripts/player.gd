@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var hud = %Hud
 
 # Player
-const SPEED: float = 500.0
+const SPEED: float = 700.0
 var acceleration: float = 5000.0
 var deceleration: float = 700.0
 var health: int = 3
@@ -13,7 +13,7 @@ var health: int = 3
 var can_dash: bool = true
 var is_dashing: bool = false
 var dash_direction: Vector2
-var dash_speed_multiplier: int = 2
+var dash_speed_multiplier: int = 3
 
 # Movement
 const BOUND: float = 2
@@ -29,7 +29,7 @@ var frenzy_enabled: bool = false
 # Character movement - the player follows the mouse when left click is held
 func _process(delta: float) -> void:
 	# change the player size based on score
-	scale = Vector2((game_manager.score + 900) / 1000, (game_manager.score + 900) / 1000)
+	scale = Vector2((game_manager.score + 900) / 500, (game_manager.score + 900) / 500)
 	
 	#prevent spinout of sprite model
 	var distance: Vector2 = get_global_mouse_position() - position
@@ -64,10 +64,12 @@ func _rotate_player() -> void:
 
 	# Flip the sprite based on the horizontal direction
 	if direction.x < -1:  # Mouse is to the left
-		self.scale = Vector2(-1,1)
+		if (scale.x > 0):
+			scale.x *= -1
 		rotation = direction.angle() + PI
 	elif direction.x > 1:  # Mouse is to the right
-		self.scale = Vector2(1,1)
+		if (scale.x < 0):
+			scale.x *= -1
 		rotation = direction.angle()
 
 func _apply_dash_movement(delta: float) -> void:

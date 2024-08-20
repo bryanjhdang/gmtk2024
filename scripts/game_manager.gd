@@ -3,6 +3,11 @@ extends Node
 @onready var hud = %Hud
 
 var score: float
+var target_score: float = 3000.0
+
+func _process(delta: float):
+	if (score >= target_score):
+		set_winner()
 
 func _ready() -> void:
 	score = 100
@@ -16,6 +21,12 @@ func add_point(amount: float) -> void:
 func update_score_label() -> void:
 	if hud:
 		hud.update_score(score)
+		
+func set_winner() -> void:
+	self.addScore(score)
+	Global.latestScore = score
+	print("latest score: %d" % score)
+	get_tree().change_scene_to_file.call_deferred("res://scenes/winner.tscn")
 
 func set_game_over() -> void:
 	self.addScore(score)

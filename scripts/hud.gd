@@ -4,6 +4,8 @@ extends CanvasLayer
 @onready var frenzy_icon = $FrenzyIcon
 @onready var timer = $FrenzyIcon/Timer
 
+var time = 0
+
 func _ready() -> void:
 	timer.one_shot = true
 
@@ -18,3 +20,5 @@ func _on_timer_timeout():
 
 func _process(delta):
 	frenzy_icon.pb.value = 100 - (timer.time_left * 10)
+	time += delta
+	$timerLabel.text = "%d" % time
