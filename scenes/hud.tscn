@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_wgdbc"]
 [ext_resource type="FontFile" uid="uid://tt4u3fqh87lr" path="res://fonts/PixelatedLove/PixelatedLove/pixelated-loveNew.ttf" id="2_afe6v"]
-[ext_resource type="PackedScene" uid="uid://lpaiudd6wep6" path="res://scenes/dash_icon.tscn" id="3_fdjad"]
+[ext_resource type="PackedScene" path="res://scenes/dash_icon.tscn" id="3_fdjad"]
 [ext_resource type="PackedScene" uid="uid://bxxipetcqhoje" path="res://scenes/frenzy_icon.tscn" id="3_hfyng"]
 
 [node name="Hud" type="CanvasLayer"]

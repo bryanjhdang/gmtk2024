@@ -1,19 +1,14 @@
-[gd_scene load_steps=17 format=3 uid="uid://bd1y1mjb4waxu"]
+[gd_scene load_steps=12 format=3 uid="uid://bd1y1mjb4waxu"]
 
 [ext_resource type="Script" path="res://scripts/sandbox.gd" id="1_fgj1y"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_kft4r"]
 [ext_resource type="PackedScene" uid="uid://dobfx4bhn6edj" path="res://characters/player/player.tscn" id="1_oa5yd"]
 [ext_resource type="Texture2D" uid="uid://dvo4p5g8nf3qm" path="res://assets/27udgidl.bmp" id="1_p7l2u"]
 [ext_resource type="Texture2D" uid="uid://celwr1wtm2hbd" path="res://assets/9ciyyd8u.bmp" id="2_7daof"]
-[ext_resource type="PackedScene" uid="uid://b8pwuaur3v5sp" path="res://characters/fish/tadpole.tscn" id="2_e1r8k"]
-[ext_resource type="PackedScene" uid="uid://bnl61m2fo57p2" path="res://characters/fish/shark.tscn" id="4_iij5m"]
+[ext_resource type="Texture2D" uid="uid://cda3tiqgn4byw" path="res://assets/wave_cutout.png" id="4_cfckx"]
 [ext_resource type="PackedScene" uid="uid://b11g7kju2d1x4" path="res://scenes/spawn_manager.tscn" id="5_dfcjb"]
 [ext_resource type="PackedScene" uid="uid://clroduu7vi62r" path="res://scenes/hud.tscn" id="5_f2q30"]
-[ext_resource type="PackedScene" uid="uid://bc07fawgqeos" path="res://characters/fish/pufferfish.tscn" id="6_y8rkf"]
-[ext_resource type="PackedScene" uid="uid://chmm5auduoxu5" path="res://characters/fish/anglerfish.tscn" id="7_mo1x5"]
 [ext_resource type="Texture2D" uid="uid://bop01t4tpag7k" path="res://assets/6871c13a.bmp" id="7_rlc2x"]
-[ext_resource type="PackedScene" uid="uid://bec8430e58r3x" path="res://characters/fish/goldfish.tscn" id="9_jepab"]
-[ext_resource type="Texture2D" uid="uid://inadj3mb4ngy" path="res://assets/b8niwdq2.bmp" id="11_mf2wi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lwel7"]
 size = Vector2(20, 12000)
@@ -48,50 +43,22 @@ offset_right = 3784.0
 offset_bottom = -1000.0
 texture = ExtResource("2_7daof")
 
-[node name="B8Niwdq2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(-931.5, -1129)
-texture = ExtResource("11_mf2wi")
-
 [node name="B8Niwdq3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(-376.5, -1129)
-texture = ExtResource("11_mf2wi")
+position = Vector2(1533, -1189)
+texture = ExtResource("4_cfckx")
 
-[node name="B8Niwdq4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(178.5, -1129)
-texture = ExtResource("11_mf2wi")
-
-[node name="B8Niwdq5" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(736.5, -1129)
-texture = ExtResource("11_mf2wi")
-
-[node name="B8Niwdq6" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(1293.5, -1129)
-texture = ExtResource("11_mf2wi")
-
-[node name="B8Niwdq7" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(1850.5, -1129)
-texture = ExtResource("11_mf2wi")
-
-[node name="B8Niwdq8" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(2406, -1129)
-texture = ExtResource("11_mf2wi")
-
-[node name="B8Niwdq9" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(2962, -1129)
-texture = ExtResource("11_mf2wi")
+[node name="B8Niwdq2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(-151, -1184)
+texture = ExtResource("4_cfckx")
 
 [node name="6871c13a" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(1421.75, 2235)
 scale = Vector2(1.2036, 1)
 texture = ExtResource("7_rlc2x")
 
-[node name="B8Niwdq11" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(3665, -1175)
-texture = ExtResource("11_mf2wi")
-
-[node name="B8Niwdq10" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(3347, -1129)
-texture = ExtResource("11_mf2wi")
+[node name="B8Niwdq4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(3050, -1184)
+texture = ExtResource("4_cfckx")
 
 [node name="Border" type="Node" parent="."]
 
@@ -134,24 +101,6 @@ limit_top = -6900
 limit_right = 5000
 limit_bottom = 5000
 position_smoothing_speed = 10.0
-
-[node name="shark" parent="." instance=ExtResource("4_iij5m")]
-position = Vector2(1075, 769)
-
-[node name="Pufferfish" parent="." instance=ExtResource("6_y8rkf")]
-position = Vector2(-412, 816)
-value = 50.0
-
-[node name="tadpole" parent="." instance=ExtResource("2_e1r8k")]
-position = Vector2(-683, 325)
-value = 1.0
-
-[node name="Anglerfish" parent="." instance=ExtResource("7_mo1x5")]
-position = Vector2(774, -459)
-
-[node name="Goldfish" parent="." instance=ExtResource("9_jepab")]
-position = Vector2(-607, -374)
-value = 10.0
 
 [node name="SpawnManager" parent="." instance=ExtResource("5_dfcjb")]
 
