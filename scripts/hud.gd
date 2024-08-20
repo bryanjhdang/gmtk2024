@@ -49,7 +49,7 @@ func _process(delta):
 		pufferfish_unlocked = true
 		pufferfish.show()
 		SfxPlayer.play_unlock()
-	if game_manager.score > 300 and anglerfish_unlocked == false:
+	if game_manager.score > 350 and anglerfish_unlocked == false:
 		anglerfish_unlocked = true
 		anglerfish.show()
 		SfxPlayer.play_unlock()

@@ -11,9 +11,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if can_shake:
-		can_shake = false
-		_shake()
+	if is_visible_in_tree():
+		if can_shake:
+			can_shake = false
+			_shake()
 
 func _shake() -> void:
 	position = original_position + Vector2(

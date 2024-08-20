@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dobfx4bhn6edj"]
+[gd_scene load_steps=9 format=3 uid="uid://dobfx4bhn6edj"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_8td2n"]
 [ext_resource type="Texture2D" uid="uid://bkfj8act1q80l" path="res://assets/main_cutout.png" id="2_s6wvc"]
 [ext_resource type="Texture2D" uid="uid://2e78iq4dxh5m" path="res://assets/frenzy_cutout.png" id="3_7lfde"]
 [ext_resource type="Script" path="res://characters/player/frenzy_fire.gd" id="4_dciv7"]
+[ext_resource type="Texture2D" uid="uid://cbcwio11u85lt" path="res://assets/dash_effect_cutout.png" id="5_yftbg"]
+[ext_resource type="Script" path="res://characters/player/dash.gd" id="6_vs1bu"]
 
 [sub_resource type="GDScript" id="GDScript_vehc7"]
 script/source = "extends Sprite2D
@@ -37,6 +39,15 @@ rotation = -1.40499
 scale = Vector2(1, 1)
 texture = ExtResource("3_7lfde")
 script = ExtResource("4_dciv7")
+
+[node name="Dash" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(-1190, 75)
+scale = Vector2(0.855969, 0.855969)
+texture = ExtResource("5_yftbg")
+script = ExtResource("6_vs1bu")
+
+[node name="DashMarker" type="Marker2D" parent="Sprite2D"]
+position = Vector2(-1190, 75)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

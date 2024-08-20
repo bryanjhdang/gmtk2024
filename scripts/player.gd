@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var hud = %Hud
 
 @onready var frenzy_visual = $Sprite2D/FrenzyFire
+@onready var dash_visual = $Sprite2D/Dash
 
 # Player
 const SPEED: float = 800.0
@@ -29,7 +30,7 @@ var frenzy_enabled: bool = false
 
 func _ready() -> void:
 	frenzy_visual.hide()
-
+	dash_visual.hide()
 
 # Character movement - the player follows the mouse when left click is held
 func _process(delta: float) -> void:
@@ -121,6 +122,7 @@ func _is_player_stationary() -> bool:
 
 func _dash() -> void:
 	if can_dash:
+		dash_visual.show()
 		SfxPlayer.play_dash()
 		can_dash = false
 		is_dashing = true
@@ -135,6 +137,7 @@ func _dash() -> void:
 func _end_dash() -> void:
 	is_dashing = false
 	hud._dashCooldown()
+	dash_visual.hide()
 	velocity = dash_direction * SPEED
 
 
