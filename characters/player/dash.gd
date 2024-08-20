@@ -22,10 +22,12 @@ func _process(delta: float) -> void:
 	else:
 		current_index = 0
 		self.position = marker.position
+		can_update = true
 
 func _move_away() -> void:
 	var direction = (position - get_parent().position).normalized()
 	position += direction * push_back_array[current_index]
 	current_index = (current_index + 1) % push_back_array.size()
 	await get_tree().create_timer(0.1).timeout
-	can_update = true
+	if current_index != push_back_array.size() - 1:
+		can_update = true
