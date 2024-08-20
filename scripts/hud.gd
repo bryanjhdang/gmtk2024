@@ -26,7 +26,7 @@ func _on_frenzy_timer_timeout():
 
 func _process(delta):
 	frenzy_icon.pb.value = 100 - (frenzyTimer.time_left * 10)
-	dash_icon.pb.value = 100 - (dashTimer.time_left * 100 / 3)
+	dash_icon.pb.value = 100 - (dashTimer.time_left * 100 / 2)
 	time += delta
 	$timerLabel.text = "%d" % time
 

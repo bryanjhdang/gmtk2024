@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://clroduu7vi62r"]
+[gd_scene load_steps=9 format=3 uid="uid://clroduu7vi62r"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_wgdbc"]
 [ext_resource type="FontFile" uid="uid://tt4u3fqh87lr" path="res://fonts/PixelatedLove/PixelatedLove/pixelated-loveNew.ttf" id="2_afe6v"]
 [ext_resource type="PackedScene" path="res://scenes/dash_icon.tscn" id="3_fdjad"]
 [ext_resource type="PackedScene" uid="uid://bxxipetcqhoje" path="res://scenes/frenzy_icon.tscn" id="3_hfyng"]
+[ext_resource type="Texture2D" uid="uid://cjjoodyxyslee" path="res://assets/tadpole_cutout.png" id="5_nr0dw"]
+[ext_resource type="Texture2D" uid="uid://b8vt58rhlcqoi" path="res://assets/anglerfish_cutout.png" id="6_vfl3p"]
+[ext_resource type="Texture2D" uid="uid://8tfrbp5wx0s1" path="res://assets/pufferfish_cutout.png" id="7_2whka"]
+[ext_resource type="Texture2D" uid="uid://b8ydw56fw8nu4" path="res://assets/regfish_cutout.png" id="7_ey7gs"]
 
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_wgdbc")
@@ -22,17 +26,28 @@ horizontal_alignment = 2
 vertical_alignment = 1
 text_direction = 2
 
-[node name="scoreLabel" type="Label" parent="."]
+[node name="canEatLabel" type="Label" parent="."]
 unique_name_in_owner = true
-offset_left = 20.0
-offset_top = 1.0
-offset_right = 134.0
-offset_bottom = 58.0
+offset_left = 42.0
+offset_top = 69.0
+offset_right = 157.0
+offset_bottom = 114.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_afe6v")
+theme_override_font_sizes/font_size = 30
+text = "CAN EAT"
+
+[node name="scoreLabel" type="Label" parent="."]
+offset_left = 40.0
+offset_top = 2.0
+offset_right = 154.0
+offset_bottom = 59.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("2_afe6v")
 theme_override_font_sizes/font_size = 42
-text = "score"
+text = "SCORE"
 
 [node name="FrenzyIcon" parent="." instance=ExtResource("3_hfyng")]
 position = Vector2(16, 552)
@@ -53,7 +68,7 @@ text = "E"
 position = Vector2(106, 552)
 
 [node name="Timer" type="Timer" parent="DashIcon"]
-wait_time = 3.0
+wait_time = 2.0
 
 [node name="Label" type="Label" parent="DashIcon"]
 offset_left = 21.0
@@ -63,6 +78,26 @@ offset_bottom = -4.0
 theme_override_fonts/font = ExtResource("2_afe6v")
 theme_override_font_sizes/font_size = 24
 text = "RMB"
+
+[node name="Fish1" type="Sprite2D" parent="."]
+position = Vector2(94, 127)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("5_nr0dw")
+
+[node name="Fish2" type="Sprite2D" parent="."]
+position = Vector2(95, 155)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("7_ey7gs")
+
+[node name="Fish3" type="Sprite2D" parent="."]
+position = Vector2(95, 196)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("7_2whka")
+
+[node name="Fish4" type="Sprite2D" parent="."]
+position = Vector2(100, 248)
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("6_vfl3p")
 
 [connection signal="timeout" from="FrenzyIcon/Timer" to="." method="_on_frenzy_timer_timeout"]
 [connection signal="timeout" from="FrenzyIcon/Timer" to="." method="_on_timer_timeout"]
