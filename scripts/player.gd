@@ -13,7 +13,7 @@ var health: int = 3
 var can_dash: bool = true
 var is_dashing: bool = false
 var dash_direction: Vector2
-var dash_speed_multiplier: int = 2
+var dash_speed_multiplier: int = 3
 
 # Movement
 const BOUND: float = 2

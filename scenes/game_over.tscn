@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://mecby3dl0n8r"]
+[gd_scene load_steps=4 format=3 uid="uid://mecby3dl0n8r"]
 
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="1_mtux7"]
 [ext_resource type="FontFile" uid="uid://tt4u3fqh87lr" path="res://fonts/PixelatedLove/PixelatedLove/pixelated-loveNew.ttf" id="2_l6m0v"]
+[ext_resource type="Texture2D" uid="uid://dvo4p5g8nf3qm" path="res://assets/27udgidl.bmp" id="2_xrb5u"]
 
 [node name="GameOverScreen" type="CanvasLayer"]
 script = ExtResource("1_mtux7")
@@ -9,6 +10,10 @@ script = ExtResource("1_mtux7")
 [node name="PanelContainer" type="PanelContainer" parent="."]
 offset_right = 1152.0
 offset_bottom = 648.0
+
+[node name="Sea" type="TextureRect" parent="PanelContainer"]
+layout_mode = 2
+texture = ExtResource("2_xrb5u")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
