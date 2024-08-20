@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://clroduu7vi62r"]
+[gd_scene load_steps=4 format=3 uid="uid://clroduu7vi62r"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_wgdbc"]
+[ext_resource type="PackedScene" uid="uid://lpaiudd6wep6" path="res://scenes/dash_icon.tscn" id="3_fdjad"]
 [ext_resource type="PackedScene" uid="uid://bxxipetcqhoje" path="res://scenes/frenzy_icon.tscn" id="3_hfyng"]
 
 [node name="Hud" type="CanvasLayer"]
@@ -36,4 +37,11 @@ position = Vector2(16, 552)
 [node name="Timer" type="Timer" parent="FrenzyIcon"]
 wait_time = 10.0
 
-[connection signal="timeout" from="FrenzyIcon/Timer" to="." method="_on_timer_timeout"]
+[node name="DashIcon" parent="." instance=ExtResource("3_fdjad")]
+position = Vector2(106, 552)
+
+[node name="Timer" type="Timer" parent="DashIcon"]
+wait_time = 3.0
+
+[connection signal="timeout" from="FrenzyIcon/Timer" to="." method="_on_frenzy_timer_timeout"]
+[connection signal="timeout" from="DashIcon/Timer" to="." method="_on_dash_timer_timeout"]

@@ -141,6 +141,7 @@ position = Vector2(1075, 769)
 
 [node name="Pufferfish" parent="." instance=ExtResource("6_y8rkf")]
 position = Vector2(-412, 816)
+value = 50.0
 
 [node name="tadpole" parent="." instance=ExtResource("2_e1r8k")]
 position = Vector2(-683, 325)
@@ -150,6 +151,7 @@ position = Vector2(774, -459)
 
 [node name="Goldfish" parent="." instance=ExtResource("9_jepab")]
 position = Vector2(-607, -374)
+value = 10.0
 
 [node name="SpawnManager" parent="." instance=ExtResource("5_dfcjb")]
 

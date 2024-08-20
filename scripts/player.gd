@@ -29,7 +29,7 @@ var frenzy_enabled: bool = false
 # Character movement - the player follows the mouse when left click is held
 func _process(delta: float) -> void:
 	# change the player size based on score
-	scale = Vector2((game_manager.score + 900) / 500, (game_manager.score + 900) / 500)
+	scale = Vector2((game_manager.score + 900) / 800, (game_manager.score + 900) / 800)
 	
 	#prevent spinout of sprite model
 	var distance: Vector2 = get_global_mouse_position() - position
@@ -128,7 +128,7 @@ func _dash() -> void:
 
 func _end_dash() -> void:
 	is_dashing = false
-	can_dash = true
+	hud._dashCooldown()
 	velocity = dash_direction * SPEED
 
 
