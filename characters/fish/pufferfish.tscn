@@ -39,11 +39,9 @@ position = Vector2(710, -640)
 
 [node name="puffer-emitter-3" type="Marker2D" parent="."]
 position = Vector2(-625, 835)
-scale = Vector2(1, 1)
 
 [node name="puffer-emitter-4" type="Marker2D" parent="."]
 position = Vector2(680, 920)
-scale = Vector2(1, 1)
 
 [connection signal="body_entered" from="fishBody" to="." method="_on_fish_body_entered"]
 [connection signal="body_entered" from="detectionRange" to="." method="_on_detection_range_body_entered"]
