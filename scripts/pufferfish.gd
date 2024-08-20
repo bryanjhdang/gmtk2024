@@ -18,10 +18,16 @@ func _shoot():
 	p_3.speed = 2500
 	p_4.speed = 2500
 	
-	p_1.rotation_degrees = 225
-	p_2.rotation_degrees = -45
-	p_3.rotation_degrees = -225
-	p_4.rotation_degrees = 45
+	if scale.x > 0:
+		p_1.rotation_degrees = 225
+		p_2.rotation_degrees = -45
+		p_3.rotation_degrees = -225
+		p_4.rotation_degrees = 45
+	else:
+		p_1.rotation_degrees = -45
+		p_2.rotation_degrees = 225
+		p_3.rotation_degrees = 45
+		p_4.rotation_degrees = -225
 	
 	get_parent().add_child(p_1)
 	get_parent().add_child(p_2)

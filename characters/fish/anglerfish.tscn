@@ -8,7 +8,7 @@ radius = 518.666
 height = 1674.67
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3r7vv"]
-radius = 2796.48
+radius = 3664.63
 
 [node name="Anglerfish" type="Sprite2D"]
 scale = Vector2(0.25, 0.25)
