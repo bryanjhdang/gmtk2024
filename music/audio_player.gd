@@ -1,15 +1,13 @@
 extends AudioStreamPlayer
 
-const level_music = preload("res://assets/8bit Bossa.mp3")
 
-func _play_music(music: AudioStream, volume = 0.0):
-	if stream == music:
+func _play_music(volume = 0.0):
+	if stream:
 		return
 	
-	stream = music
 	volume_db = volume
 	play()
 
 
 func play_music_level():
-	_play_music(level_music)
+	_play_music()

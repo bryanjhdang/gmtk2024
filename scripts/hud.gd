@@ -19,7 +19,7 @@ func _dashCooldown() -> void:
 	dashTimer.start()
 
 func update_score(value: float) -> void:
-	$scoreLabel.text = "Score: %d" % value
+	$scoreLabel.text = "SCORE: %d" % value
 
 func _on_frenzy_timer_timeout():
 	player.cast_frenzy = true

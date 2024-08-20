@@ -99,7 +99,7 @@ func _on_spawn_timer_timeout() -> void:
 	fish_instance.game_manager = %GameManager
 	
 	current_fish_count += 1
-	spawn_timer.wait_time = randi_range(2, 10)
+	spawn_timer.wait_time = randi_range(1, 3)
 	print(spawn_timer.wait_time)
 
 	print("Spawned fish at position: ", fish_instance.position)
