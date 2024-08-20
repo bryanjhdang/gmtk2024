@@ -1,6 +1,5 @@
 extends AudioStreamPlayer
 
-
 func _play_music(volume = 0.0):
 	if stream:
 		return

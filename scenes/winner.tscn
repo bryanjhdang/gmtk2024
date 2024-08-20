@@ -88,14 +88,14 @@ skew = -0.0574759
 texture = ExtResource("4_gypat")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(198, 396)
-scale = Vector2(0.226626, 0.164653)
+position = Vector2(198, 406)
+scale = Vector2(0.226626, 0.179759)
 texture = ExtResource("4_gypat")
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(755, 518)
+position = Vector2(756.681, 537.608)
 rotation = 3.05607
-scale = Vector2(-0.172538, -0.120371)
+scale = Vector2(-0.172538, -0.155265)
 texture = ExtResource("5_djssf")
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]

@@ -3,6 +3,8 @@ extends CharacterBody2D
 @onready var game_manager = %GameManager
 @onready var hud = %Hud
 
+@onready var frenzy_visual = $Sprite2D/FrenzyFire
+
 # Player
 const SPEED: float = 800.0
 var acceleration: float = 5000.0
@@ -24,6 +26,9 @@ var prev_direction: Vector2
 const BOOST: float = 600.0
 var cast_frenzy: bool = true
 var frenzy_enabled: bool = false
+
+func _ready() -> void:
+	frenzy_visual.hide()
 
 
 # Character movement - the player follows the mouse when left click is held
@@ -116,6 +121,7 @@ func _is_player_stationary() -> bool:
 
 func _dash() -> void:
 	if can_dash:
+		SfxPlayer.play_dash()
 		can_dash = false
 		is_dashing = true
 		dash_direction = _get_mouse_direction()
@@ -141,7 +147,9 @@ func _chomp() -> void:
 # If combo meter is full, it activates a temporary speed boost and invincibility from the fishes 
 func _frenzy() -> void:
 	if cast_frenzy:
-		print("activate frenzy")
+		SfxPlayer.play_frenzy()
+		frenzy_visual.show()
+		#print("activate frenzy")
 		cast_frenzy = false
 		frenzy_enabled = true
 		set_collision_layer_value(1, false)
@@ -151,8 +159,9 @@ func _frenzy() -> void:
 func _end_frenzy() -> void:
 	frenzy_enabled = false
 	hud._frenzyCooldown()
+	frenzy_visual.hide()
 	set_collision_layer_value(1, true)
-	print("frenzy ended")
+	#print("frenzy ended")
 
 # DEBUG: kill yourself NOW.
 func _suicide() -> void:

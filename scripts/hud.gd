@@ -16,6 +16,9 @@ extends CanvasLayer
 const pufferfish_value: float = 150.0
 const anglerfish_value: float = 300.0
 
+var pufferfish_unlocked: bool = false
+var anglerfish_unlocked: bool = false
+
 var time = 0
 
 func _ready() -> void:
@@ -38,15 +41,18 @@ func _on_frenzy_timer_timeout():
 
 func _process(delta):
 	frenzy_icon.pb.value = 100 - (frenzyTimer.time_left * 10)
-	print(frenzyTimer.time_left)
 	dash_icon.pb.value = 100 - (dashTimer.time_left * 100 / 2)
 	time += delta
 	$timerLabel.text = "%d" % time
 	
-	if game_manager.score > 150:
+	if game_manager.score > 150 and pufferfish_unlocked == false:
+		pufferfish_unlocked = true
 		pufferfish.show()
-	if game_manager.score > 300:
+		SfxPlayer.play_unlock()
+	if game_manager.score > 300 and anglerfish_unlocked == false:
+		anglerfish_unlocked = true
 		anglerfish.show()
+		SfxPlayer.play_unlock()
 
 func _on_dash_timer_timeout():
 	player.can_dash = true

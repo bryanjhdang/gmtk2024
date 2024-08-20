@@ -42,6 +42,7 @@ func _direction_randomizer() -> void:
 func _on_fish_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		if game_manager.score > value:
+			SfxPlayer.play_eat()
 			game_manager.add_point(value)
 			queue_free()
 		else:

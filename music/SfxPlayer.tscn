@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhx8aocfuj2xs"]
+
+[ext_resource type="Script" path="res://music/sfx_player.gd" id="1_b2yom"]
+[ext_resource type="AudioStream" uid="uid://c42u61kidh7wi" path="res://assets/pop.ogg" id="1_yk1ms"]
+[ext_resource type="AudioStream" uid="uid://betrln1vwpw6r" path="res://assets/frenzy_sfx.wav" id="2_podkx"]
+[ext_resource type="AudioStream" uid="uid://duwgl2m0g8bjw" path="res://assets/dash_sfx.wav" id="3_jlv27"]
+[ext_resource type="AudioStream" uid="uid://bto5i022gr5xg" path="res://assets/unlock_fish.ogg" id="5_8v84g"]
+
+[node name="SfxPlayer" type="Node2D"]
+script = ExtResource("1_b2yom")
+
+[node name="FrenzySfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_podkx")
+
+[node name="DashSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_jlv27")
+
+[node name="Pop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_yk1ms")
+volume_db = 10.0
+
+[node name="UnlockFish" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_8v84g")
