@@ -1,12 +1,10 @@
-extends AudioStreamPlayer
+extends Node2D
 
-func _play_music(volume = 0.0):
-	if stream:
-		return
-	
-	volume_db = volume
-	play()
+@onready var bgm = $"8BitBossa"
 
+var played: bool = false
 
 func play_music_level():
-	_play_music()
+	if not played:
+		bgm.play()
+		played = true

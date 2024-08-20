@@ -4,7 +4,7 @@ extends CanvasLayer
 
 func _ready() -> void:
 	score_label.text = "Score: %d" % int(Global.latestScore)
-	AudioPlayer.play_music_level()
+	#AudioPlayer.play_music_level()
 
 func _on_yes_pressed() -> void:
 	SfxPlayer.play_start()
