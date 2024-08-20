@@ -11,9 +11,9 @@ func _shoot():
 	p_2.transform = $"angler-emiter-2".global_transform
 	p_3.transform = $"angler-emiter-3".global_transform
 	
-	p_1.speed = 4000
-	p_2.speed = 4000
-	p_3.speed = 4000
+	p_1.speed = 3000
+	p_2.speed = 3000
+	p_3.speed = 3000
 	
 	p_1.rotation_degrees = -155
 	p_2.rotation_degrees = 155

@@ -40,11 +40,12 @@ func _direction_randomizer() -> void:
 	scale.x = (abs(scale.x) * x)
 
 func _on_fish_body_entered(body: Node2D) -> void:
-	if game_manager.score > value:
-		game_manager.add_point(value)
-		queue_free()
-	else:
-		game_manager.set_game_over()
+	if body.is_in_group("player"):
+		if game_manager.score > value:
+			game_manager.add_point(value)
+			queue_free()
+		else:
+			game_manager.set_game_over()
 
 func _on_detection_range_body_entered(body: Node2D) -> void:
 	#if game_manager.score < value:
@@ -81,7 +82,7 @@ func interact_with_player():
 	
 	
 func emitter_timeout():
-	var timer = get_tree().create_timer(0.5)
+	var timer = get_tree().create_timer(1.5)
 	timer.timeout.connect(set_timer)
 
 func set_timer():

@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 radius = 60.0
 height = 222.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_8td2n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

@@ -14,7 +14,7 @@ radius = 2380.08
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_tb1rv")
 script = ExtResource("2_rlng1")
-value = 10.0
+value = 20.0
 is_scared = true
 fish_detected_speed = 4.0
 

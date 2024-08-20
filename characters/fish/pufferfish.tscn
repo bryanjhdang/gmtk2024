@@ -8,7 +8,7 @@ radius = 361.666
 height = 836.666
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3r7vv"]
-radius = 2287.65
+radius = 4365.56
 
 [node name="Pufferfish" type="Sprite2D"]
 scale = Vector2(0.2, 0.2)

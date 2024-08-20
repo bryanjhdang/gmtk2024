@@ -3,7 +3,7 @@ extends Node
 @onready var hud = %Hud
 
 var score: float
-var target_score: float = 3000.0
+var target_score: float = 2000.0
 
 func _process(delta: float):
 	if (score >= target_score):

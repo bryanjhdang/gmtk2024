@@ -29,7 +29,7 @@ var frenzy_enabled: bool = false
 # Character movement - the player follows the mouse when left click is held
 func _process(delta: float) -> void:
 	# change the player size based on score
-	scale = Vector2((game_manager.score + 900) / 800, (game_manager.score + 900) / 800)
+	scale = Vector2((game_manager.score + 900) / 900, (game_manager.score + 900) / 900)
 	
 	#prevent spinout of sprite model
 	var distance: Vector2 = get_global_mouse_position() - position
@@ -43,8 +43,8 @@ func _process(delta: float) -> void:
 			_apply_deceleration(delta)
 		
 	# for testing purposes
-	if Input.is_action_pressed("suicide"):
-		_suicide()
+	#if Input.is_action_pressed("suicide"):
+		#_suicide()
 
 	move_and_slide()
 	
