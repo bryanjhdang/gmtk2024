@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bd1y1mjb4waxu"]
+[gd_scene load_steps=14 format=3 uid="uid://bd1y1mjb4waxu"]
 
 [ext_resource type="Script" path="res://scripts/sandbox.gd" id="1_fgj1y"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_kft4r"]
@@ -8,7 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://cda3tiqgn4byw" path="res://assets/wave_cutout.png" id="4_cfckx"]
 [ext_resource type="PackedScene" uid="uid://b11g7kju2d1x4" path="res://scenes/spawn_manager.tscn" id="5_dfcjb"]
 [ext_resource type="PackedScene" uid="uid://clroduu7vi62r" path="res://scenes/hud.tscn" id="5_f2q30"]
-[ext_resource type="Texture2D" uid="uid://bop01t4tpag7k" path="res://assets/6871c13a.bmp" id="7_rlc2x"]
+[ext_resource type="Texture2D" uid="uid://d0xqodj05svii" path="res://assets/sand_cutout.png" id="5_lexk6"]
+[ext_resource type="Texture2D" uid="uid://d0eodype6qamr" path="res://assets/seaweed_cutout.png" id="6_f6b5u"]
+[ext_resource type="Texture2D" uid="uid://b4larpyacraa8" path="res://assets/coral_cutout.png" id="7_wxny0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lwel7"]
 size = Vector2(20, 12000)
@@ -52,13 +54,43 @@ position = Vector2(-151, -1184)
 texture = ExtResource("4_cfckx")
 
 [node name="6871c13a" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(1421.75, 2235)
-scale = Vector2(1.2036, 1)
-texture = ExtResource("7_rlc2x")
+position = Vector2(-264, 2379)
+scale = Vector2(0.8, 0.665)
+texture = ExtResource("5_lexk6")
 
 [node name="B8Niwdq4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(3050, -1184)
 texture = ExtResource("4_cfckx")
+
+[node name="6871c13a4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(-427, 2225)
+scale = Vector2(0.8, 0.665)
+texture = ExtResource("6_f6b5u")
+
+[node name="6871c13a2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(1219, 2367)
+scale = Vector2(0.8, 0.665)
+texture = ExtResource("5_lexk6")
+
+[node name="6871c13a3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(2673, 2373)
+scale = Vector2(0.8, 0.665)
+texture = ExtResource("5_lexk6")
+
+[node name="6871c13a5" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(4001, 2367)
+scale = Vector2(0.8, 0.665)
+texture = ExtResource("5_lexk6")
+
+[node name="6871c13a8" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(3018, 2172)
+scale = Vector2(0.8, 0.664)
+texture = ExtResource("7_wxny0")
+
+[node name="6871c13a9" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(1481, 2208)
+scale = Vector2(0.8, 0.665)
+texture = ExtResource("6_f6b5u")
 
 [node name="Border" type="Node" parent="."]
 

@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var hud = %Hud
 
 # Player
-const SPEED: float = 700.0
+const SPEED: float = 800.0
 var acceleration: float = 5000.0
 var deceleration: float = 700.0
 var health: int = 3
