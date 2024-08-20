@@ -8,13 +8,13 @@ radius = 361.666
 height = 836.666
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3r7vv"]
-radius = 1435.01
+radius = 2287.65
 
 [node name="Pufferfish" type="Sprite2D"]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_vvk22")
 script = ExtResource("2_jj3yb")
-value = 20.0
+value = 100.0
 fish_detected_speed = 3.0
 
 [node name="fishBody" type="Area2D" parent="."]

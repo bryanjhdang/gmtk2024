@@ -8,7 +8,7 @@ radius = 370.0
 height = 2833.33
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3r7vv"]
-radius = 2756.84
+radius = 3356.99
 
 [node name="shark" type="Sprite2D"]
 scale = Vector2(0.3, 0.3)

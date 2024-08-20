@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://cw0meiasgss1q"]
+[gd_scene load_steps=9 format=3 uid="uid://cw0meiasgss1q"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_oqqlg"]
 [ext_resource type="FontFile" uid="uid://tt4u3fqh87lr" path="res://fonts/PixelatedLove/PixelatedLove/pixelated-loveNew.ttf" id="1_vv163"]
 [ext_resource type="Texture2D" uid="uid://dvo4p5g8nf3qm" path="res://assets/27udgidl.bmp" id="2_dejbw"]
 [ext_resource type="Script" path="res://scripts/menu_start_game.gd" id="2_osacb"]
+[ext_resource type="Texture2D" uid="uid://d0eodype6qamr" path="res://assets/seaweed_cutout.png" id="5_tb3ak"]
+[ext_resource type="Texture2D" uid="uid://cjjoodyxyslee" path="res://assets/tadpole_cutout.png" id="6_68ti4"]
+[ext_resource type="Texture2D" uid="uid://8tfrbp5wx0s1" path="res://assets/pufferfish_cutout.png" id="7_w0ijg"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qu4s5"]
 
@@ -124,5 +127,49 @@ theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxTexture_qu4s5")
 text = "START"
 script = ExtResource("2_osacb")
+
+[node name="SeaweedCutout" type="Sprite2D" parent="."]
+position = Vector2(180.083, 647.438)
+scale = Vector2(0.250781, 0.312394)
+texture = ExtResource("5_tb3ak")
+
+[node name="SeaweedCutout2" type="Sprite2D" parent="."]
+position = Vector2(320.181, 663.063)
+scale = Vector2(0.209038, 0.420145)
+texture = ExtResource("5_tb3ak")
+
+[node name="TadpoleCutout" type="Sprite2D" parent="."]
+position = Vector2(236.922, 541.75)
+scale = Vector2(0.207823, 0.185039)
+texture = ExtResource("6_68ti4")
+
+[node name="SeaweedCutout3" type="Sprite2D" parent="."]
+position = Vector2(227.783, 642.872)
+scale = Vector2(0.17028, 0.45481)
+skew = 0.143117
+texture = ExtResource("5_tb3ak")
+
+[node name="SeaweedCutout4" type="Sprite2D" parent="."]
+position = Vector2(1030, 589.131)
+scale = Vector2(0.176405, 0.408413)
+texture = ExtResource("5_tb3ak")
+
+[node name="SeaweedCutout5" type="Sprite2D" parent="."]
+position = Vector2(980, 632)
+scale = Vector2(0.18113, 0.291201)
+skew = -0.178024
+texture = ExtResource("5_tb3ak")
+
+[node name="SeaweedCutout6" type="Sprite2D" parent="."]
+position = Vector2(712, 658)
+scale = Vector2(0.166554, 0.291237)
+skew = 0.20944
+texture = ExtResource("5_tb3ak")
+
+[node name="PufferfishCutout" type="Sprite2D" parent="."]
+position = Vector2(1039, 235)
+scale = Vector2(0.151091, 0.145008)
+texture = ExtResource("7_w0ijg")
+flip_h = true
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

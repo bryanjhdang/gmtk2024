@@ -8,13 +8,13 @@ radius = 180.0
 height = 746.666
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3r7vv"]
-radius = 1670.27
+radius = 2380.08
 
 [node name="tadpole" type="Sprite2D"]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_tb1rv")
 script = ExtResource("2_rlng1")
-value = 1.0
+value = 10.0
 is_scared = true
 fish_detected_speed = 4.0
 

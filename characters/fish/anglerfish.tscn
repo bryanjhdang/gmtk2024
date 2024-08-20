@@ -8,13 +8,13 @@ radius = 518.666
 height = 1674.67
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3r7vv"]
-radius = 1949.64
+radius = 2796.48
 
 [node name="Anglerfish" type="Sprite2D"]
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_rh6lt")
 script = ExtResource("2_tch0g")
-value = 50.0
+value = 150.0
 fish_detected_speed = 2.0
 
 [node name="fishBody" type="Area2D" parent="."]
