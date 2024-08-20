@@ -14,7 +14,6 @@ radius = 2756.84
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_wj2nx")
 script = ExtResource("2_uc77r")
-value = 500.0
 fish_detected_speed = 3.0
 
 [node name="fishBody" type="Area2D" parent="."]
