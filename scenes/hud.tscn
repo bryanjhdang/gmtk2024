@@ -1,19 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://clroduu7vi62r"]
+[gd_scene load_steps=4 format=3 uid="uid://clroduu7vi62r"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_wgdbc"]
+[ext_resource type="FontFile" uid="uid://tt4u3fqh87lr" path="res://fonts/PixelatedLove/PixelatedLove/pixelated-loveNew.ttf" id="2_afe6v"]
 [ext_resource type="PackedScene" uid="uid://bxxipetcqhoje" path="res://scenes/frenzy_icon.tscn" id="3_hfyng"]
 
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_wgdbc")
 
 [node name="timerLabel" type="Label" parent="."]
-offset_left = 1013.0
-offset_top = 1.0
-offset_right = 1123.0
-offset_bottom = 125.0
+offset_left = 1029.0
+offset_top = -32.0
+offset_right = 1139.0
+offset_bottom = 92.0
 size_flags_horizontal = 8
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 64
+theme_override_fonts/font = ExtResource("2_afe6v")
+theme_override_font_sizes/font_size = 42
 text = "00"
 horizontal_alignment = 2
 vertical_alignment = 1
@@ -21,13 +23,14 @@ text_direction = 2
 
 [node name="scoreLabel" type="Label" parent="."]
 unique_name_in_owner = true
-offset_left = 23.0
-offset_top = 16.0
-offset_right = 85.0
-offset_bottom = 50.0
+offset_left = 20.0
+offset_top = 1.0
+offset_right = 134.0
+offset_bottom = 58.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_font_sizes/font_size = 24
+theme_override_fonts/font = ExtResource("2_afe6v")
+theme_override_font_sizes/font_size = 42
 text = "score"
 
 [node name="FrenzyIcon" parent="." instance=ExtResource("3_hfyng")]
@@ -35,5 +38,14 @@ position = Vector2(16, 552)
 
 [node name="Timer" type="Timer" parent="FrenzyIcon"]
 wait_time = 10.0
+
+[node name="Label" type="Label" parent="FrenzyIcon"]
+offset_left = 34.0
+offset_top = -36.0
+offset_right = 74.0
+offset_bottom = -4.0
+theme_override_fonts/font = ExtResource("2_afe6v")
+theme_override_font_sizes/font_size = 24
+text = "E"
 
 [connection signal="timeout" from="FrenzyIcon/Timer" to="." method="_on_timer_timeout"]
