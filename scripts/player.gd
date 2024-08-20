@@ -64,10 +64,12 @@ func _rotate_player() -> void:
 
 	# Flip the sprite based on the horizontal direction
 	if direction.x < -1:  # Mouse is to the left
-		self.scale = Vector2(-1,1)
+		if (scale.x > 0):
+			scale.x *= -1
 		rotation = direction.angle() + PI
 	elif direction.x > 1:  # Mouse is to the right
-		self.scale = Vector2(1,1)
+		if (scale.x < 0):
+			scale.x *= -1
 		rotation = direction.angle()
 
 func _apply_dash_movement(delta: float) -> void:
