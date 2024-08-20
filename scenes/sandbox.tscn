@@ -116,6 +116,7 @@ autostart = true
 unique_name_in_owner = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+unique_name_in_owner = true
 zoom = Vector2(0.5, 0.5)
 limit_left = -5000
 limit_top = -6900
