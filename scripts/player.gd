@@ -166,6 +166,7 @@ func get_hurt(damage: int) -> void:
 func _damaged() -> void:
 	# knockback, temp invincibility
 	print("got hit")
+	game_manager.set_game_over()
 
 
 func _die() -> void:

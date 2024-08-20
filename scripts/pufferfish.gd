@@ -13,10 +13,10 @@ func _shoot():
 	p_3.transform = $"puffer-emitter-3".global_transform
 	p_4.transform = $"puffer-emitter-4".global_transform
 	
-	p_1.speed = 2500
-	p_2.speed = 2500
-	p_3.speed = 2500
-	p_4.speed = 2500
+	p_1.speed = 3500
+	p_2.speed = 3500
+	p_3.speed = 3500
+	p_4.speed = 3500
 	
 	p_1.rotation_degrees = 225
 	p_2.rotation_degrees = -45
