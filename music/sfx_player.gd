@@ -5,6 +5,8 @@ extends Node2D
 @onready var dash_sfx = $DashSfx
 @onready var unlock_sfx = $UnlockFish
 @onready var start_sfx = $StartSfx
+@onready var fail_sfx = $Fail
+@onready var success_sfx = $Success
 
 func play_eat():
 	eat_sfx.play()
@@ -20,3 +22,9 @@ func play_unlock():
 
 func play_start():
 	start_sfx.play()
+
+func play_fail():
+	fail_sfx.play()
+
+func play_success():
+	success_sfx.play()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dhx8aocfuj2xs"]
+[gd_scene load_steps=9 format=3 uid="uid://dhx8aocfuj2xs"]
 
 [ext_resource type="Script" path="res://music/sfx_player.gd" id="1_b2yom"]
 [ext_resource type="AudioStream" uid="uid://c42u61kidh7wi" path="res://assets/pop.ogg" id="1_yk1ms"]
@@ -6,6 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://duwgl2m0g8bjw" path="res://assets/dash_sfx.wav" id="3_jlv27"]
 [ext_resource type="AudioStream" uid="uid://bto5i022gr5xg" path="res://assets/unlock_fish.ogg" id="5_8v84g"]
 [ext_resource type="AudioStream" uid="uid://bgai02gc6wcyt" path="res://assets/start_sfx.wav" id="6_l67nm"]
+[ext_resource type="AudioStream" uid="uid://5g4sklmec334" path="res://assets/lava.mp3" id="7_uclxw"]
+[ext_resource type="AudioStream" uid="uid://c64u3hlwc2wiu" path="res://assets/succes.ogg" id="8_1t5yx"]
 
 [node name="SfxPlayer" type="Node2D"]
 script = ExtResource("1_b2yom")
@@ -26,3 +28,10 @@ stream = ExtResource("5_8v84g")
 [node name="StartSfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_l67nm")
 volume_db = -10.0
+
+[node name="Fail" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_uclxw")
+
+[node name="Success" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_1t5yx")
+volume_db = 5.0

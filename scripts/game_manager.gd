@@ -7,6 +7,7 @@ var target_score: float = 2000.0
 
 func _process(delta: float):
 	if (score >= target_score):
+		SfxPlayer.play_success()
 		set_winner()
 
 func _ready() -> void:
@@ -29,6 +30,7 @@ func set_winner() -> void:
 	get_tree().change_scene_to_file.call_deferred("res://scenes/winner.tscn")
 
 func set_game_over() -> void:
+	SfxPlayer.play_fail()
 	self.addScore(score)
 	Global.latestScore = score
 	#print("latest score: %d" % score)
