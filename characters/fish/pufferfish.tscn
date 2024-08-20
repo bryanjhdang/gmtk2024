@@ -31,18 +31,16 @@ shape = SubResource("CapsuleShape2D_6rmjw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detectionRange"]
 shape = SubResource("CircleShape2D_3r7vv")
 
-[node name="emitter-1" type="Marker2D" parent="."]
-position = Vector2(520, 875)
+[node name="puffer-emitter-1" type="Marker2D" parent="."]
+position = Vector2(610, 875)
 
-[node name="emitter-2" type="Marker2D" parent="."]
-position = Vector2(435, -770)
-scale = Vector2(1, 1)
+[node name="puffer-emitter-2" type="Marker2D" parent="."]
+position = Vector2(530, -690)
 
-[node name="emitter-3" type="Marker2D" parent="."]
-position = Vector2(-360, -780)
-scale = Vector2(1, 1)
+[node name="puffer-emitter-3" type="Marker2D" parent="."]
+position = Vector2(-505, -665)
 
-[node name="emitter-4" type="Marker2D" parent="."]
+[node name="puffer-emitter-4" type="Marker2D" parent="."]
 position = Vector2(-365, 890)
 scale = Vector2(0.999999, 0.999999)
 

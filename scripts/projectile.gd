@@ -1,7 +1,7 @@
 extends Area2D
 
-@export var speed: int = 500
-@export var max_range: float = 1000
+@export var speed: int = 1000
+@export var max_range: float = 20000
 var distance_traveled: float = 0.0
 
 func _physics_process(delta: float) -> void:

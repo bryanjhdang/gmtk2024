@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqckc5ch8fb4l"]
+
+[ext_resource type="Script" path="res://scripts/projectile.gd" id="1_52gjy"]
+[ext_resource type="Texture2D" uid="uid://dnvju7r8tv22t" path="res://assets/lightning_cutout.png" id="2_avbaa"]
+
+[node name="projectile-bolt" type="Area2D"]
+rotation = 1.5708
+collision_layer = 0
+monitorable = false
+script = ExtResource("1_52gjy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_avbaa")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-32.9992, 214, 82.0001, 40.9997, 12.9999, -29, 25.9993, -205, -76.9999, 23.0003, 0.00017376, 48)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
