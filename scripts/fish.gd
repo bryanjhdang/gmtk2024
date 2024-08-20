@@ -5,12 +5,14 @@ class_name Fish
 @onready var player = %Player
 @export var value: float
 
-
 var speed: float = 150
 var x: float
 var is_detected: bool = false
 @export var is_scared: bool # false: chases player | true: fish runs away
 @export var fish_detected_speed: float
+
+var can_shoot: bool = true
+
 
 func _ready() -> void:
 	# Randomizes fish horizontal direction on spawn
@@ -30,8 +32,7 @@ func _process(delta: float) -> void:
 		interact_with_player()
 	else:
 		var motion = Vector2(x, 0) * speed * (1 - abs(scale.x))
-		position += motion * delta
-		
+		position += motion * delta		
 		
 func _direction_randomizer() -> void:
 	# Randomizes fish horizontal direction
@@ -45,8 +46,6 @@ func _on_fish_body_entered(body: Node2D) -> void:
 	else:
 		game_manager.set_game_over()
 
-
-
 func _on_detection_range_body_entered(body: Node2D) -> void:
 	#if game_manager.score < value:
 	is_detected = true
@@ -56,8 +55,6 @@ func _on_detection_range_body_exited(body: Node2D) -> void:
 	is_detected = false
 	print('phew im safe!!')
 	
-	
-
 func interact_with_player():
 	var direction: Vector2
 	#fish_detected_speed = (2 - abs(scale.x))
@@ -65,6 +62,12 @@ func interact_with_player():
 		direction = (position - player.position).normalized()
 	else:
 		direction = (player.position - position).normalized()
+	
+	
+	if can_shoot:
+		_shoot()
+		can_shoot = false
+		emitter_timeout()
 	
 	# Changes direction of fish
 	x = sign(direction.x)
@@ -76,3 +79,14 @@ func interact_with_player():
 	# Runs from the player
 	position += direction * speed * get_process_delta_time() * fish_detected_speed	
 	
+	
+func emitter_timeout():
+	var timer = get_tree().create_timer(0.5)
+	timer.timeout.connect(set_timer)
+
+func set_timer():
+	can_shoot = true
+
+# @override 
+func _shoot():
+	pass
